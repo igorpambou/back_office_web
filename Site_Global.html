@@ -1,0 +1,2727 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://www.eseason.com/wp-content/uploads/2023/10/cropped-favicon-192x192-1.webp" sizes="192x192">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS_RECETTE.css">
+    <title>Outils Support</title>
+    <style>
+            /* Lien SVG Viewer : https://www.svgviewer.dev/*/
+                :root {
+            /* Couleurs principales */
+            --color-white: #f2f7fc;
+            --color-black: #000000;
+
+            /* Body */
+            --color-background: #1e1e2f;
+            --color-text-primary: #e0e0e0;
+
+            /* Header */
+            --color-header: #2f3863;
+            --color-header-text: #f2f7fc;
+            --color-button: #5a8bd6;
+            --color-button-hover: #73a4e7;
+            --color-button-active: #4079b9;
+            --color-button-header-active: #e1ecf8;
+            --color-text-button: #f2f7fc;
+            --color-burger-hover: #252c4f;
+            --color-burger-active: #252c4f;
+            --color-burger-background: #2f3863;
+            --color-burger-background-hover: #252c4f;
+            --color-menu-background: #2f3863;
+            --color-menu-hover: #252c4f;
+            /* --color-menu-active: #f7260b;*/
+            --color-accent: #4d5891;
+
+            /* WEB Tool */
+            --color-container-background: #29292e;
+            --color-tab-background: #3a3a3f;
+            --color-tab-background-hover: #4a5f73;
+            --color-tab-background-active: #4a5f73;
+            --color-tab-text: #d1d1d1;
+            --color-tab-text-active: #e0e4e8;
+            --color-url-form-background: #3a3a3f;
+            --color-url-form-background-hover: #4a5f73;
+            --color-url-form-background-active: #4a5f73;
+            --color-url-form-text: #d1d1d1;
+            --color-url-form-text-active: #e0e4e8;
+            --color-url-form-border: #4a5f73;
+            --color-url-form-border-hover: #3e4f60;
+            --color-url-form-border-active: #3e4f60;
+            --color-url-form-button: #4a5f73;
+            --color-url-form-button-text: #e0e4e8;
+            --color-url-form-button-hover: #3e4f60;
+            --color-generated-text-background: #3a3a3f;
+            --color-generated-text: #d1d1d1;
+
+            /* IB */
+            --color-IB: #a8d3da;
+            --color-IB-generated-text-background: #1b1b1f;
+            --color-form-selector-background: #58b4aa;
+            --color-form-selector-text: #e0f4f2;
+            --color-form-selector-background-hover: #4a9e94;
+            --color-IB-input-background: #3a3a3f;
+            --color-IB-input-text: #d1d1d1;
+            --color-IB-button: #58b4aa;
+            --color-IB-button-hover: #4a9e94;
+            --color-IB-button-text: #e0f4f2;
+            --color-web-tool: #8c9ebb;
+            
+            /* Toast */
+            --color-toast-background: #4caf50;
+            --color-toast-text: #ffffff;
+
+            /* URL Prod/Recette*/
+            --color-theme-title: #3a3a3f;
+            --color-URL-theme-button-border: #5a8bd6;
+            --color-URL-theme-button-background: #3a3a3f;
+            --color-URL-theme-button-text: #d1d1d1;
+            --color-URL-theme-button-background-active: #4a5f73;
+            --color-URL-theme-button-text-active: #e0e4e8;
+            --color-URL-project-button-background: #006A4E;
+            --color-URL-project-button-text: #d1d1d1;
+            --color-URL-project-button-background-hover: #008060;
+            --color-URL-project-button-text-after:#b8e6d9;
+            --color-URL-project-button-recette-background: #772d37;
+            --color-URL-project-button-recette-text: #d1d1d1;
+            --color-URL-project-button-recette-background-hover: #8d363f;
+            --color-URL-project-button-recette-text-after:#e6c3c7;
+            
+            
+            /* Espacements */
+            --spacing-sm: 10px;
+            --spacing-md: 15px;
+            --spacing-lg: 20px;
+            --spacing-xl: 30px;
+            
+            /* Bordures */
+            --border-radius-header-button: 30px;
+        }
+
+        .light-theme {
+            /* Body */
+            --color-background: #f2f7fca4;
+            --color-text-primary: #000000;
+
+            /* Header */
+            --color-header: #ffffff; 
+            --color-header-text: #2f3863; 
+            --color-button: #93add3;  
+            --color-button-hover: #73a4e7;  
+            --color-button-active: #4079b9;  
+            --color-button-header-active: #e1ecf8;  
+            --color-text-button: #2f3863;  
+            --color-burger-hover: #5a8bd6;  
+            --color-burger-active: #4079b9;  
+            --color-burger-background: #ffffff;  
+            --color-burger-background-hover: #f2f7fc;  
+            --color-menu-background: #ffffff; 
+            --color-menu-hover: #f2f7fc;
+            /*--color-menu-active: #f7260b;*/
+            --color-accent: #4d5891;
+
+            /* WEB Tool */
+            --color-web-tool: #8c9ebb;
+            --color-container-background: #29292e;
+            --color-tab-background: #3a3a3f;
+            --color-tab-background-hover: #4a5f73;
+            --color-tab-background-active: #4a5f73;
+            --color-tab-text: #d1d1d1;
+            --color-tab-text-active: #e0e4e8;
+            --color-url-form-background: #3a3a3f;
+            --color-url-form-background-hover: #4a5f73;
+            --color-url-form-background-active: #4a5f73;
+            --color-url-form-text: #d1d1d1;
+            --color-url-form-text-active: #e0e4e8;
+            --color-url-form-border: #4a5f73;
+            --color-url-form-border-hover: #3e4f60;
+            --color-url-form-border-active: #3e4f60;
+            --color-url-form-button: #4a5f73;
+            --color-url-form-button-text: #e0e4e8;
+            --color-url-form-button-hover: #3e4f60;
+            --color-generated-text-background: #3a3a3f;
+            --color-generated-text: #d1d1d1;
+
+            /* IB */
+            --color-IB: #a8d3da;
+            --color-IB-generated-text-background: #1b1b1f;
+            --color-form-selector-background: #58b4aa;
+            --color-form-selector-text: #e0f4f2;
+            --color-form-selector-background-hover: #4a9e94;
+            --color-IB-input-background: #3a3a3f;
+            --color-IB-input-text: #d1d1d1;
+            --color-IB-button: #58b4aa;
+            --color-IB-button-hover: #4a9e94;
+            --color-IB-button-text: #e0f4f2;
+
+            --color-toast-background: #4caf50;
+            --color-toast-text: #ffffff;
+
+            /* URL Prod/Recette*/
+            --color-theme-title: #3a3a3f;
+            --color-URL-theme-button-border: #5a8bd6;
+            --color-URL-theme-button-background: #3a3a3f;
+            --color-URL-theme-button-text: #d1d1d1;
+            --color-URL-theme-button-background-active: #4a5f73;
+            --color-URL-theme-button-text-active: #e0e4e8;
+            --color-URL-project-button-background: #006A4E;
+            --color-URL-project-button-text: #d1d1d1;
+            --color-URL-project-button-background-hover: #008060;
+            --color-URL-project-button-text-after:#b8e6d9;
+            --color-URL-project-button-recette-background: #772d37;
+            --color-URL-project-button-recette-text: #d1d1d1;
+            --color-URL-project-button-recette-background-hover: #8d363f;
+            --color-URL-project-button-recette-text-after:#e6c3c7;
+            
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin-left : 50px;
+            padding: 0;
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+        }
+
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: var(--color-header);
+            color: var(--color-header-text);
+            padding: 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .custom-logo {
+            position: absolute;
+            top: 0px;
+            left: -15px;
+            width: 250px;
+            height: 80px;
+        }
+
+
+        #theme-toggle {
+            position: fixed;
+            top: 25px;
+            right: 20px;
+            width: 30px; /* Ajustez la largeur selon vos besoins */
+            height: 30px; /* Ajustez la hauteur selon vos besoins */
+            font-size: 20px; /* Ajustez la taille de la police selon vos besoins */
+            /*padding: 10px; /* Ajoutez du rembourrage si nécessaire */
+            background: none; /* Enlever le fond par défaut */
+            border: none; /* Enlever la bordure par défaut */
+            color: var(--color-white); /* Couleur de l'icône */
+            cursor: pointer; /* Changer le curseur pour indiquer que c'est cliquable */
+        }
+
+        .fa-moon {
+             color: var(--color-black); /* Couleur de l'icône ou du texte */
+        }
+
+        .assist {
+            position: fixed;
+            top: var(--spacing-md);
+            left: 250px;
+            background-color: var(--color-header);
+            color: var(--color-text-button);
+            font-size: 1rem;
+            border: 2px solid var(--color-button);
+            border-radius: var(--border-radius-header-button);
+            padding: var(--spacing-md) var(--spacing-sm);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .assist:hover {
+            background-color: var(--color-button-hover);
+            color: var(--color-white);
+        }
+        
+        .assist.active {
+            background-color: var(--color-button-active);
+            color: var(--color-button-header-active);
+        }
+
+        .phone {
+            position: fixed;
+            top: var(--spacing-md);
+            left: 410px;
+            background-color: var(--color-header);
+            color: var(--color-text-button);
+            font-size: 1rem;
+            border: 2px solid var(--color-button);
+            border-radius: var(--border-radius-header-button);
+            padding: var(--spacing-md) var(--spacing-sm);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .phone:hover {
+            background-color: var(--color-button-hover);
+            color: var(--color-white);
+        }
+        
+        .phone.active {
+            background-color: var(--color-button-active);
+            color: var(--color-button-header-active);
+        }
+
+        .custom-select {
+            position: fixed;
+            top: 25px;
+            left: 525px;
+            width: 120px; /* Ajuster pour inclure l'espace pour la flèche */
+            height: 30px;
+            padding: 0 10px; /* Ajout d'espace pour le texte et la flèche */
+            border-radius: var(--border-radius-header-button);
+            border: 2px solid var(--color-button);
+            background-color: var(--color-white);
+            margin-left: 10px;
+            font-size: 14px;
+            appearance: none; /* Masque la flèche native */
+            -webkit-appearance: none; /* Pour Safari/Chrome */
+            -moz-appearance: none; /* Pour Firefox */
+            background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: calc(100% - 10px) center;
+            background-size: 16px;
+            cursor: pointer;
+        }
+        
+        
+        .jira {
+            position: fixed;
+            top: var(--spacing-md);
+            /*left: 90%;*/
+            right: 70px;
+            width: 100px;
+            background-color: var(--color-header);
+            color: var(--color-text-button);
+            font-size: 1rem;
+            border: 2px solid var(--color-button);
+            border-radius: var(--border-radius-header-button);
+            padding: var(--spacing-md) var(--spacing-md);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .jira:hover {
+            background-color: var(--color-button-hover);
+            color: var(--color-white);
+        }
+        
+        .jira.active {
+            background-color: var(--color-button-active);
+            color: var(--color-button-header-active);
+        }
+
+        .assist, .phone, .jira {
+            transition: all 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Ombre par défaut */
+            
+        }
+        
+        /* Effet hover */
+        .assist:hover, .phone:hover, .jira:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            filter: brightness(110%);
+        }
+        
+        /* Effet click */
+        .assist:active, .phone:active, .jira:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Effet de ripple */
+        .assist::after, .phone::after, .jira::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease-out, height 0.3s ease-out;
+        }
+        
+        .assist:active::after, .phone:active::after, .jira:active::after {
+            width: 200px;
+            height: 200px;
+        }
+
+        
+
+        /* .burger {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            padding: 15px;
+            background-color: var(--color-burger-background); *//* Couleur bleu sombre */
+            /*color: var(--color-white);
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .burger:hover {
+            background-color: var(--color-burger-background-hover); /* Couleur légèrement plus foncée pour le survol */
+       /* }*/
+
+        .menu {
+            position: fixed;
+            top: 80px; /* Ajuster pour être sous le bouton burger */
+            left: 0px;
+            width: 50px;
+            height: calc(100% - 70px); /* Ajuster pour ne pas chevaucher le bouton burger */
+            background-color: var(--color-menu-background); /* Couleur bleu sombre */
+            display: flex;
+            flex-direction: column;
+            transition: left 0.3s ease;
+            z-index: 999; /* Assurer que le menu est sous le bouton burger */
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu a {
+            color: var(--color-white);
+            padding: 10px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border-bottom: 1px solid #252c4f; /* Ajuster la couleur de la bordure */
+        }
+
+        .menu a:last-child {
+            border-bottom: none;
+        }
+
+        .menu a:hover {
+            background-color: var(--color-menu-hover); /* Couleur légèrement plus foncée pour le survol */
+            transform: scale(1.05); /* Ajouter un effet de zoom */
+        }
+
+        .menu.show {
+            left: 0;
+        }
+
+        /* Infobulle personnalisée */
+        .menu a {
+            position: relative;
+        }
+
+        .menu a[data-tooltip]::after {
+            content: attr(data-tooltip); /* Texte de l'infobulle */
+            position: absolute;
+            top: 50%; /* Ajuste verticalement */
+            left: 60px; /* Décalage à droite du menu */
+            transform: translateY(-50%);
+            background-color: var(--color-menu-hover); /* Utilise la couleur du survol */
+            color: var(--color-white);
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            font-size: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .menu a:hover[data-tooltip]::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /*.menu a.active {
+            background-color: var(--color-menu-active); /* Une couleur distincte pour l'élément actif */
+            /*transform: scale(1.1); /* Un léger zoom pour indiquer l'élément actif */
+           /* border-right: 4px solid var(--color-accent); /* Ajouter une bordure pour indiquer la sélection */
+           /* border-right-width: 5;
+        } */
+
+        .menu a.active {
+            background-color: var(--color-menu-active); /* Couleur de fond de l'élément actif */
+            transform: scale(1.1); /* Effet de zoom */
+            position: relative; /* Nécessaire pour positionner le point */
+        }
+        
+        .menu a.active::before {
+            content: ''; /* Crée un élément vide */
+            position: absolute;
+            left: 43px; /* Décale à gauche */
+            top: 50%;
+            transform: translateY(-50%); /* Centré verticalement */
+            width: 5px;
+            height: 20px;
+            border-radius: 30%; /* Forme circulaire */
+            background-color: var(--color-accent); /* Couleur du point */
+        }
+        
+
+        .content {
+            display: none;
+            padding: 80px 20px 20px 20px;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .container {
+            background-color: var(--color-container-background);
+            border-radius: 12px;
+            padding: 20px 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            width: 500px;
+            text-align: center;
+            margin: auto;
+        }
+
+        /* Début du CSS pour les outils Web */
+
+        #Outil_Web {
+            color: var(--color-web-tool);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 10px;
+            min-width: 300px; /* Largeur minimale pour la zone des onglets */
+            width: fit-content; /* S'adapte au contenu */
+        }
+
+        .tab {
+            background-color: var(--color-tab-background);
+            color: var(--color-tab-text);
+            border: none;
+            border-radius: 6px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab:hover {
+            background-color: var(--color-tab-background-hover);
+            color: var(--color-tab-text-active);
+        }
+
+        .tab.active {
+            background-color: var(--color-tab-background-active);
+            color: var(--color-tab-text-active);
+        }
+
+        .form-section {
+            display: none;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+
+        .url-form input[type="text"], input[type="date"], input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 8px 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: var(--color-url-form-background);
+            color: var(--color-url-form-text);
+        }
+
+        .url-form button, #openURLButton {
+            background-color: var(--color-url-form-button);
+            color: var(--color-url-form-button-text);
+            border: none;
+            border-radius: 6px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .url-form button:hover, #openURLButton:hover {
+            background-color: var(--color-url-form-button-hover);
+            transform: scale(1.02);
+        }
+
+        .url-form button, #copyTextInfonet {
+            background-color: var(--color-url-form-button);
+            color: var(--color-url-form-button-text);
+            border: none;
+            border-radius: 6px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .url-form button:hover, #copyTextInfonet:hover {
+            background-color: var(--color-url-form-button-hover);
+            transform: scale(1.02);
+        }
+
+        #generatedText {
+            margin-top: 20px;
+            background-color: var(--color-generated-text-background);
+            padding: 15px;
+            border-radius: 6px;
+            font-family: "Courier New", monospace;
+            color: var(--color-generated-text);
+            text-align: left;
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        #openURLButton {
+            display: none;
+            margin-top: 10px;
+        }
+
+        #copyTextInfonet {
+            display: none;
+            margin-top: 10px;
+        }
+
+        /* Début du CSS pour les intégration bancaires */
+        #IB {
+            color: var(--color-IB);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        /* Boutons de sélection des formulaires */
+        .form-selector {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .form-selector button {
+            background-color: var(--color-form-selector-background);
+            color: var(--color-form-selector-text);
+            border: none;
+            border-radius: 6px;
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            flex-grow: 1;
+            max-width: 120px;
+        }
+
+        .form-selector button:hover {
+            background-color: var(--color-form-selector-background-hover);
+        }
+
+        .form-container {
+            display: none; /* Cacher tous les formulaires */
+        }
+
+        .active {
+            display: block; /* Afficher le formulaire actif */
+        }
+
+        /* Formulaire Payzen */
+        .payzen-form input[type="text"], .payzen-form input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 8px 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: var(--color-IB-input-background);
+            color: var(--color-IB-input-text);
+        }
+
+        .payzen-form button {
+            background-color: var(--color-IB-button);
+            color: var(--color-IB-button-text);
+            border: none;
+            border-radius: 6px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .payzen-form button:hover {
+            background-color: var(--color-IB-button-hover);
+            transform: scale(1.02);
+        }
+
+        /* Formulaire Lyra */
+        .lyra-form input[type="text"], .lyra-form input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 8px 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: var(--color-IB-input-background);
+            color: var(--color-IB-input-text);
+        }
+
+        .lyra-form button {
+            background-color: var(--color-IB-button);
+            color: var(--color-IB-button-text);
+            border: none;
+            border-radius: 6px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .lyra-form button:hover {
+            background-color: var(--color-IB-button-hover);
+            transform: scale(1.02);
+        }
+
+        /* Formulaire Floa */
+        .floa-form input[type="text"], .floa-form input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 8px 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: var(--color-IB-input-background);
+            color: var(--color-IB-input-text);
+        }
+
+        .floa-form button {
+            background-color: var(--color-IB-button);
+            color: var(--color-IB-button-text);
+            border: none;
+            border-radius: 6px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .floa-form button:hover {
+            background-color: var(--color-IB-button-hover);
+            transform: scale(1.02);
+        }
+
+        #generatedText_IB {
+            margin-top: 20px;
+            background-color: var(--color-IB-generated-text-background);
+            padding: 15px;
+            border-radius: 6px;
+            font-family: "Courier New", monospace;
+            font-size: 1rem;
+            color: var(--color-IB);
+            text-align: left;
+            white-space: pre-wrap;
+            max-height: 200px; /* Hauteur maximale */
+            overflow-y: auto; /* Barre de défilement verticale */
+        }
+
+         /*#generatedRequest_IB {
+            margin-top: 20px;
+            background-color: var(--color-IB-generated-text-background);
+            padding: 15px;
+            border-radius: 6px;
+            font-family: "Courier New", monospace;
+            font-size: 1rem;
+            color: var(--color-IB);
+            text-align: left;
+            white-space: pre-wrap;
+            max-height: 200px; /* Hauteur maximale */
+            /*overflow-y: auto; /* Barre de défilement verticale */
+        /*}*/
+
+        /* Toast styles */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--color-toast-background);
+            color: var(--color-toast-text);
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            display: none;
+            z-index: 1000;
+        }
+
+        /* Rendu identique à Payzen pour le texte généré */
+        .generated-text-container {
+            margin-top: 20px;
+            background-color: var(--color-IB-generated-text-background);
+            padding: 15px;
+            border-radius: 6px;
+            font-family: "Courier New", monospace;
+            font-size: 1rem;
+            color: var(--color-IB);
+            text-align: left;
+            white-space: pre-wrap;
+            max-height: 200px; /* Hauteur maximale */
+            overflow-y: auto; /* Barre de défilement verticale */
+        }
+
+        /* URL Prod/Recette*/
+
+        .URL-Client {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .Client {
+            margin-bottom: 30px;
+        }   
+
+        .theme-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--color-theme-title);
+            padding-bottom: 10px;
+             /* display: inline-block; /* Pour que la bordure s'adapte à la largeur du texte */
+            max-width: 300px; /* Même largeur que les boutons */
+        }
+
+        .URL-theme-button, .environment-button, .URL-project-button, .URL-project-button-recette {
+            background-color: var(--color-URL-theme-button-background);
+            color: var(--color-URL-theme-button-text);
+            border: 2px solid var(--color-URL-theme-button-border);
+            border-radius: 20px;
+            padding: 6px 10px; /* Réduit le padding pour des boutons plus compacts */
+            font-size: 0.9em;  /* Taille de police réduite */
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 250px;
+            height: 40px;
+            margin: 5px 0; /* Espacement réduit entre les boutons */
+            text-align: left;
+            position: relative;
+        }
+        .URL-theme-button::after, .environment-button::after {
+            content: '▼';
+            position: absolute;
+            right: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .URL-theme-button.expanded::after, .environment-button.expanded::after {
+            transform: rotate(180deg);
+        }
+
+        .URL-theme-button.active, .environment-button.active, .URL-project-button.active, .URL-project-button-recette.active {
+            background-color: var(--color-URL-theme-button-background-active);
+            color: var(--color-URL-theme-button-text-active);
+        }
+
+        .environment-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .URL-project-button {
+            background-color: var(--color-URL-project-button-background);
+            font-weight: bold;
+            /*color: var(--color-URL-project-button-text);
+            border: none;
+            border-left: 4px solid transparent;
+            border-radius: 6px;*/
+            padding: 10px 15px;
+            /*max-width: 300px;*/
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .URL-project-button:hover {
+            background-color: var(--color-URL-project-button-background-hover);
+        }
+
+        .URL-project-button::after {
+            content: '➜';
+            color: var(--color-URL-project-button-text-after);
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .URL-project-button:hover::after {
+            opacity: 1;
+        }
+
+        /* Bouton Recette */
+
+        .URL-project-button-recette {
+            background-color: var(--color-URL-project-button-recette-background);
+            font-weight: bold;
+            /*color: var(--color-URL-project-button-recette-text);
+            border: none;
+            border-left: 4px solid transparent;
+            border-radius: 6px;*/
+            padding: 10px 15px;
+            /*max-width: 300px;*/
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .URL-project-button-recette:hover {
+            background-color: var(--color-URL-project-button-recette-background-hover);
+        }
+
+        .URL-project-button-recette::after {
+            content: '➜';
+            color: var(--color-URL-project-button-recette-text-after);
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .URL-project-button-recette:hover::after {
+            opacity: 1;
+        }
+
+        .URL-theme-environments, .URL-environment-projects {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .URL-theme-environments.visible, .URL-environment-projects.visible {
+            max-height: 1000px;
+            opacity: 1;
+        }
+
+        /* Project-specific hover colors */
+        /*.URL-project-button[data-project="wbcbo"]:hover {
+            background-color: #ee3224;
+        }
+        .URL-project-button[data-project="wbctu"]:hover {
+            background-color: #eb940c;
+        }
+        .URL-project-button[data-project="mlc"]:hover {
+            background-color: #2196F3;
+        }
+        .URL-project-button[data-project="edm"]:hover {
+            background-color: #00adb3;
+        }
+
+        .URL-project-button-recette[data-project="wbcbo"]:hover {
+            background-color: #ee3224;
+        }
+        .URL-project-button-recette[data-project="wbctu"]:hover {
+            background-color: #eb940c;
+        }
+        .URL-project-button-recette[data-project="mlc"]:hover {
+            background-color: #2196F3;
+        }
+        .URL-project-button-recette[data-project="edm"]:hover {
+            background-color: #00adb3;
+        }*/
+        /* Bouton Autres*/
+
+        /* #internal {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;  /* Espace entre les deux sections 
+        }*/
+
+        .internal-container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;  /* Espace entre les deux sections */
+        }
+        
+        .internal-tool {
+            /* flex: 0 1 auto;  /* Ne grandira pas mais pourra rétrécir si nécessaire */
+            width: 250px;
+        }
+        
+        .internal-internal {
+           /* flex: 0 1 auto;  /* Ne grandira pas mais pourra rétrécir si nécessaire */
+            margin-left: 20px;  /* Espace supplémentaire à gauche */
+            width: 250px;
+        }
+
+        .environment-internal {
+            /* display: grid; */
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 5px; /* Réduit l'espacement entre les colonnes */
+        }
+        
+        .environment-internal > div {
+            margin: 0; /* Supprime les marges externes */
+        }
+        
+        .environment-internal h3 {
+            margin: 20px 0px 0px 0px; /* Réduit l'espacement autour des titres */
+            font-size: 1em; /* Optionnel : ajuste la taille du titre pour plus de compacité */
+        }
+        
+        /* Ajuste l'espacement des boutons */
+        .URL-internal-button-tool, .URL-internal-button-internal {
+            margin: 3px 0; /* Réduit l'espacement entre les boutons */
+            padding: 8px 12px; /* Réduit légèrement le padding des boutons */
+        }
+
+        .URL-internal-button-tool, .URL-internal-button-internal {
+            background-color: #3a3a3f;
+            color: #d1d1d1;
+            border: 2px solid var(--color-URL-theme-button-border);
+            border-radius: var(--border-radius-header-button);
+            padding: 6px 10px; /* Réduit le padding pour des boutons plus compacts */
+            font-size: 0.9em;  /* Taille de police réduite */
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 250px;
+            height: 40px;
+            margin: 5px 0; /* Espacement réduit entre les boutons */
+            text-align: left;
+            position: relative;
+        }
+
+        .URL-theme-button.active, .environment-button.active, .URL-internal-button-tool.active, .URL-internal-button-internal.active {
+            background-color: #4a5f73;
+            color: #e0e4e8;
+        }
+
+        .URL-internal-button-tool {
+            background-color: #006D77;
+            font-weight: bold;
+            /*color: #d1d1d1;
+            /*border: none;
+            border-left: 4px solid transparent;
+            border-radius: 6px;*/
+            padding: 10px 15px;
+            /*max-width: 300px;*/
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .URL-internal-button-tool:hover {
+            background-color: #008891;
+        }
+
+        .URL-internal-button-tool::after {
+            content: '➜';
+            color: #b8e6d9;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .URL-internal-button-tool:hover::after {
+            opacity: 1;
+        }
+
+        .URL-internal-button-internal {
+            background-color: #e94c2daf;
+            font-weight: bold;
+            /*color: #d1d1d1;
+            /*border: none;
+            border-left: 4px solid transparent;
+            border-radius: 6px;*/
+            padding: 10px 15px;
+            /*max-width: 300px;*/
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .URL-internal-button-internal:hover {
+            background-color: #F05E42;
+        }
+
+        .URL-internal-button-internal::after {
+            content: '➜';
+            color: #e6c3c7;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .URL-internal-button-internal:hover::after {
+            opacity: 1;
+        }
+        
+       /* .URL-internal-button-tool[data-project="wbcbo"]:hover {
+            border-left-color: #4CAF50;
+        }
+        .URL-internal-button-tool[data-project="wbctu"]:hover {
+            border-left-color: #4CAF50;
+        }
+        .URL-internal-button-tool[data-project="mlc"]:hover {
+            border-left-color: #2196F3;
+        }
+        .URL-internal-button-tool[data-project="edm"]:hover {
+            border-left-color: #FF9800;
+        }
+
+        .URL-internal-button-internal[data-project="wbcbo"]:hover {
+            border-left-color: #4CAF50;
+        }
+        .URL-internal-button-internal[data-project="wbctu"]:hover {
+            border-left-color: #4CAF50;
+        }
+        .URL-internal-button-internal[data-project="mlc"]:hover {
+            border-left-color: #2196F3;
+        }
+        .URL-internal-button-internal[data-project="edm"]:hover {
+            border-left-color: #FF9800;
+        }*/
+
+        /* CSS pour le texte à coté de l'IB*/
+
+        .template-field {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .template-field label {
+            min-width: 150px;
+            font-weight: bold;
+        }
+        
+        .template-field input {
+            flex: 1;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+        }
+        
+        .copy-btn {
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background-color: #45a049;
+        }
+
+        #Bank.content {
+            display: none;
+        }
+        
+        #Bank.content.active {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        #Bank .container .right-container {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+
+        /* IB access */
+        .url-button {
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s;
+            max-height: 20px;
+        }
+        
+        .url-button:hover {
+            background-color: #1976D2;
+        }
+
+        .right-container {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #TextTemplates .url-button {
+            margin-bottom: 20px;  /* Espace entre le bouton et le h2 */
+            width: calc(100% - 30px);  /* Largeur ajustée pour s'aligner avec les autres éléments */
+            margin-left: 5px;
+            margin-right: 15px;
+            margin-top: 15px;
+        }
+
+        #json-formatter.content{
+            display: none;
+            padding: 80px 0px 20px 10px;
+        }
+
+        #json-formatter.content.active{
+            display: block;
+        }
+
+
+        /* Style de la popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #1e1e2f;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            z-index: 1000;
+        }
+        
+        /* Fond semi-transparent derrière la popup */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* Style du bouton */
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: #5a8bd6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #73a4e7;
+        }
+        
+        /* Liste des choix */
+        .choices {
+            margin-top: 15px;
+        }
+        
+        .choice {
+            padding: 8px;
+            background: #5a8bd6;
+            margin: 5px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .choice:hover {
+            background: #73a4e7;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="toast" class="toast">Texte copié dans le presse-papier !</div>
+    <div class="header">
+        <h1>Outils Support</h1>
+        <img width="250" height="80" src="https://www.eseason.com/wp-content/uploads/2023/10/logo-eseason-1-300x109.png" class="custom-logo" alt="eSeason :  logiciel camping &amp; solutions logicielles pour les professionnels du camping" decoding="async" fetchpriority="high" srcset="https://www.eseason.com/wp-content/uploads/2023/10/logo-eseason-1.png 2594w, https://www.eseason.com/wp-content/uploads/2023/10/logo-eseason-1-300x109.png 300w, https://www.eseason.com/wp-content/uploads/2023/10/logo-eseason-1-1024x373.png 1024w, https://www.eseason.com/wp-content/uploads/2023/10/logo-eseason-1-768x280.png 768w, https://www.eseason.com/wp-content/uploads/2023/10/logo-eseason-1-1536x560.png 1536w, https://www.eseason.com/wp-content/uploads/2023/10/logo-eseason-1-2048x747.png 2048w" sizes="(max-width: 2594px) 100vw, 2594px">
+        <button class="assist" id="assistButton" onclick="connexionAssist()">Connexion Assist</button>
+        <button class="phone" onclick="connexionPhone()">Ouvrir MITEL</button>
+        <select class="custom-select">
+            <option>Code MITEL</option>
+            <option>JLF : 260</option>
+            <option>DLA : 252</option>
+            <option>LGE : 244</option>
+            <option>TLU : 265</option>
+            <option>QPH : 257</option>
+            <option>HMA : 273</option>
+            <option>LTO : 255</option>
+            <option>NAZ : 267</option>
+            <option>FHI : 259</option>
+            <option>LRE : 262</option>
+            <option>JBO : 254</option>
+        </select>
+        <button class="jira" id="jiraButton" onclick="connexionJira()">Jira</button>
+        <button id="theme-toggle" disabled>
+            <i class="fas fa-sun"></i> <!-- Icône de soleil par défaut -->
+        </button>
+    </div>
+    <!-- <div class="burger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div> -->
+    <div class="menu" id="menu"> 
+        <a href="#" onclick="showPage('URL-Client')" data-tooltip="Lien Prod/Recette" class="active">
+            <?xml version="1.0" encoding="utf-8"?>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" fill="#5a8bd6" width="30" height="30">
+                <path d="M84 128.6H54.6C36.6 128.6 22 114 22 96c0-9 3.7-17.2 9.6-23.1 5.9-5.9 14.1-9.6 23.1-9.6H84m24 65.3h29.4c9 0 17.2-3.7 23.1-9.6 5.9-5.9 9.6-14.1 9.6-23.1 0-18-14.6-32.6-32.6-32.6H108M67.9 96h56.2" style="fill:none;stroke:#5a8bd6;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10"/>
+            </svg>
+        </a>
+        <a href="#" onclick="showPage('Tool')" data-tooltip="Outil Web">
+            <svg width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#5a8bd6" stroke-width="1" stroke-linecap="round" stroke-linejoin="miter">
+                <path d="M22,8.5A6.5,6.5,0,0,1,15.5,15a6.38,6.38,0,0,1-2-.3L6.62,21.62,2.38,17.38,9.3,10.46a6.38,6.38,0,0,1-.3-2,6.49,6.49,0,0,1,9.34-5.84L14,7l3,3,4.34-4.34A6.45,6.45,0,0,1,22,8.5Z"></path>
+            </svg>
+        </a>
+        <a href="#" onclick="showPage('Bank')" data-tooltip="Intégration Bancaire">
+             <svg fill="#5a8bd6" width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.2,17.41A6,6,0,0,1,14.46,20c-2.68,0-5-2-6-5H14a1,1,0,0,0,0-2H8.05c0-.33-.05-.67-.05-1s0-.67.05-1H14a1,1,0,0,0,0-2H8.47c1-3,3.31-5,6-5A6,6,0,0,1,19.2,6.59a1,1,0,1,0,1.6-1.18A7.92,7.92,0,0,0,14.46,2c-3.76,0-7,2.84-8.07,7H4a1,1,0,0,0,0,2H6.05c0,.33,0,.67,0,1s0,.67,0,1H4a1,1,0,0,0,0,2H6.39c1.09,4.16,4.31,7,8.07,7a7.92,7.92,0,0,0,6.34-3.41,1,1,0,0,0-1.6-1.18Z"/>
+            </svg> 
+        </a>
+        <a href="#" onclick="showPage('internal')" data-tooltip="Interne">
+            <svg width="30" height="30" viewBox="0 0 32 32" id="icon" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <style>.cls-1{fill:none;}</style>
+                </defs>
+                <rect x="8" y="8" width="2" height="4" fill="#5a8bd6"/>
+                <rect x="8" y="14" width="2" height="4" fill="#5a8bd6"/>
+                <rect x="14" y="8" width="2" height="4" fill="#5a8bd6"/>
+                <rect x="14" y="14" width="2" height="4" fill="#5a8bd6"/>
+                <rect x="8" y="20" width="2" height="4" fill="#5a8bd6"/>
+                <rect x="14" y="20" width="2" height="4" fill="#5a8bd6"/>
+                <path d="M30,14a2,2,0,0,0-2-2H22V4a2,2,0,0,0-2-2H4A2,2,0,0,0,2,4V30H30ZM4,4H20V28H4ZM22,28V14h6V28Z" fill="#5a8bd6"/>
+                <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="30" height="30"/>
+            </svg>
+        </a>
+        <!-- <a href="#" onclick="showPage('api-tester')" data-tooltip="Requêteur API">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#5a8bd6" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7l10 5 10-5-10-5zm0 7.236L4.618 7 12 4.764 19.382 7 12 9.236zm-10 3.764l10 5 10-5-2.618-1.236L12 14.764 4.618 12 2 13.764zm0 4.5l10 5 10-5-2.618-1.236L12 19.264 4.618 17 2 18.264z" fill="#5a8bd6"/>
+            </svg>     
+        </a> -->
+        <a href="#" onclick="showPage('json-formatter')" data-tooltip="JSON Validator">
+            <svg width="30px" height="30px" viewBox="0 0 32 32" id="icon" fill="#5a8bd6" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <style>.cls-1{fill:none;}</style>
+                </defs>
+                <title>JSON</title>
+                <polygon points="31 11 31 21 29 21 27 15 27 21 25 21 25 11 27 11 29 17 29 11 31 11"/>
+                <path d="M21.3335,21h-2.667A1.6684,1.6684,0,0,1,17,19.3335v-6.667A1.6684,1.6684,0,0,1,18.6665,11h2.667A1.6684,1.6684,0,0,1,23,12.6665v6.667A1.6684,1.6684,0,0,1,21.3335,21ZM19,19h2V13H19Z"/>
+                <path d="M13.3335,21H9V19h4V17H11a2.002,2.002,0,0,1-2-2V12.6665A1.6684,1.6684,0,0,1,10.6665,11H15v2H11v2h2a2.002,2.002,0,0,1,2,2v2.3335A1.6684,1.6684,0,0,1,13.3335,21Z"/>
+                <path d="M5.3335,21H2.6665A1.6684,1.6684,0,0,1,1,19.3335V17H3v2H5V11H7v8.3335A1.6684,1.6684,0,0,1,5.3335,21Z"/>
+                <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="30" height="30" />
+            </svg>   
+        </a>
+        <a href="#" onclick="showPage('Question')" data-tooltip="Question">
+            <svg fill="#5a8bd6" width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1">
+                <path d="M15.33252,9.5A3.5001,3.5001,0,0,0,8.80127,7.75a1.00016,1.00016,0,0,0,1.73242,1A1.50266,1.50266,0,0,1,11.83252,8a1.5,1.5,0,1,1,0,3h-.00244a.94984.94984,0,0,0-.18927.0387,1.03181,1.03181,0,0,0-.19861.04065.98275.98275,0,0,0-.15552.10485,1.00813,1.00813,0,0,0-.162.10975,1.00464,1.00464,0,0,0-.11706.1737.97789.97789,0,0,0-.09668.14417,1.02252,1.02252,0,0,0-.04285.21191A.94847.94847,0,0,0,10.83252,12v1l.00232.01135.0011.49109a1.00016,1.00016,0,0,0,1,.99756h.00244a1.00006,1.00006,0,0,0,.99756-1.00244l-.00153-.66138A3.49363,3.49363,0,0,0,15.33252,9.5Zm-4.20264,6.79A1,1,0,0,0,11.82959,18a1.036,1.036,0,0,0,.71045-.29,1.01517,1.01517,0,0,0,0-1.41992A1.03425,1.03425,0,0,0,11.12988,16.29Z"/>
+            </svg>
+        </a>
+    </div>
+    <div id="Tool" class="content">
+        <div id="Accueil" class="container">
+            <h2 id="Outil_Web">Outil Web</h2>
+        <div class="tabs">
+            <button class="tab active" data-form="infonet">Infonet</button>
+            <button class="tab" data-form="bank-thr">URL Bank THR</button>
+            <button class="tab" data-form="bank-syr">URL Bank SYR</button>
+            <button class="tab" data-form="bank-yhr">URL Bank YHR</button>
+            <button class="tab" data-form="reset-context">Reset Context</button>
+            <button class="tab" data-form="tripadvisor">Trip Advisor</button>
+            <button class="tab" data-form="reload-order">Reload Order</button>
+            <button class="tab" data-form="wbcPicture">WBC Photo</button>
+        </div>
+
+        <div id="infonet" class="form-section url-form active">
+            <form id="infonetForm">
+                <input type="text" id="idClient" placeholder="ID Client" required>
+                <input type="text" id="identifiant" placeholder="Identifiant" required>
+                <button type="submit">Générer</button>
+            </form>
+        </div>
+
+        <div id="bank-thr" class="form-section url-form">
+            <form id="bankTHRForm">
+                <input type="text" id="campingCodeTHR" placeholder="Code Camping" required>
+                <input type="text" id="transactionNumberTHR" placeholder="N° Transaction" required>
+                <input type="text" id="idOrderTHR" placeholder="idOrder" required>
+                <button type="submit">Générer</button>
+            </form>
+        </div>
+
+        <div id="bank-syr" class="form-section url-form">
+            <form id="bankSYRForm">
+                <input type="text" id="campingCodeSYR" placeholder="Code Camping" required>
+                <input type="text" id="transactionNumberSYR" placeholder="N° Transaction" required>
+                <input type="text" id="idOrderSYR" placeholder="idOrder" required>
+                <button type="submit">Générer</button>
+            </form>
+        </div>
+
+        <div id="bank-yhr" class="form-section url-form">
+            <form id="bankYHRForm">
+                <input type="text" id="campingCodeYHR" placeholder="Code Camping" required>
+                <input type="text" id="transactionNumberYHR" placeholder="N° Transaction" required>
+                <input type="text" id="idOrderYHR" placeholder="idOrder" required>
+                <button type="submit">Générer</button>
+            </form>
+        </div>
+
+        <div id="reset-context" class="form-section url-form">
+            <form id="resetContextForm">
+                <input type="text" id="idClicampReset" placeholder="IDClicamp" required>
+                <input type="text" id="idSiteReset" placeholder="ID Site">
+                <input type="text" id="langueReset" placeholder="Langue">
+                <input type="text" id="idOperateurReset" placeholder="ID Opérateur">
+                <button type="submit">Générer</button>
+            </form>
+        </div>
+
+        <div id="tripadvisor" class="form-section url-form">
+            <button type="button" onclick="openInventory()">hotel_inventory</button>
+            <form id="tripadvisorForm">
+                <input type="text" id="partner_id" placeholder="ID Partenaire" required>
+                <input type="date" id="start_date" placeholder="Date de début (aaaa-mm-jj)" required>
+                <input type="date" id="end_date" placeholder="Date de fin (aaaa-mm-jj)" required>
+                <input type="text" id="lang" placeholder="Langue (par défaut: fr)">
+                <input type="number" id="num_adults" placeholder="Nombre d'adultes (par défaut: 2)">
+                <input type="number" id="num_rooms" placeholder="Nombre de chambres (par défaut: 1)">
+                <input type="text" id="currency" placeholder="Monnaie (par défaut: EUR)">
+                <input type="text" id="user_country" placeholder="Pays (par défaut: FR)">
+                <input type="text" id="device_type" placeholder="Device (par défaut: d)">
+                <button type="button" onclick="generateUrl()">Générer</button>
+            </form>
+        </div>
+
+        <div id="reload-order" class="form-section url-form">
+            <form id="reloadOrderForm">
+                <input type="text" id="idTransaction" placeholder="idPayment" required>
+                <button type="submit">Générer</button>
+            </form>
+        </div>
+
+        <div id="wbcPicture" class="form-section url-form">
+            <form id="wbcPictureForm">
+                <input type="text" id="idEntreUnicamp" placeholder="idEntreUnicamp" required>
+                <button type="submit">Générer</button>
+            </form>
+        </div>
+
+        <div id="generatedText"></div>
+        <button id="copyTextInfonet">Copier</button>
+        <button id="openURLButton">Ouvrir URL</button>
+
+        <div id="toast" class="toast">Texte copié dans le presse-papier !</div>
+    </div>
+    </div>
+    <div id="Bank" class="content">
+         <div id="IB" class="container">
+            <h2 id="IB">Intégration bancaire</h2>
+        <!-- Boutons de sélection du formulaire -->
+        <div class="form-selector">
+            <button onclick="showForm('payzen')">Payzen</button>
+            <button onclick="showForm('lyra')">Lyra</button>
+            <button onclick="showForm('floa')">Floa</button>
+            <button onclick="showForm('yelloh')">Yelloh</button>
+            <button onclick="showForm('redsys')">Redsys</button>
+            <button onclick="showForm('systempay')">Systempay</button>
+            <button onclick="showForm('payline')">Payline</button>
+            <button onclick="showForm('paybox')">Paybox</button>
+            <button onclick="showForm('spplus')">SPPLUS</button>
+            <button onclick="showForm('sogecommerce')">Sogecommerce</button>
+            <button onclick="showForm('paymenthub')">PaymentHub</button>
+        </div>
+
+        <!-- Formulaire Payzen -->
+        <div id="payzen" class="form-container payzen-form active">
+            <h2 id="IB">Formulaire Payzen</h2>
+            <input type="password" id="SECRET_TEST" value="defaultValue" disabled>
+            <input type="text" id="IDCLICAMP" placeholder="@IDCLICAMP">
+            <input type="text" id="IDCLIENT" placeholder="@IDCLIENT">
+            <input type="password" id="BRAND" value="payzen" disabled>
+            <input type="text" id="CLE_TEST" placeholder="@CLE_TEST">
+            <input type="text" id="CLE_PROD" placeholder="@CLE_PROD">
+            <input type="text" id="REST_PASSWORD" placeholder="@REST_PASSWORD">
+            <input type="text" id="REST_PASSWORD_TEST" placeholder="@REST_PASSWORD_TEST">
+            <input type="password" id="SHA_256" placeholder="@SHA_256 (vide)" disabled>
+            <input type="password" id="URL" value="https://secure.payzen.eu/vads-payment/" disabled>
+            <button onclick="generateText('payzen')">Générer le Texte</button>
+            <div id="generatedText_IB" class="generated-text-container"></div>
+            <button onclick="copyText()">Copier le Texte</button>
+        </div>
+
+        <!-- Formulaire Lyra -->
+        <div id="lyra" class="form-container lyra-form">
+            <h2 id="IB">Formulaire Lyra</h2>
+            <input type="password" id="SECRET_TEST_LYRA" value="defaultValue" disabled>
+            <input type="text" id="IDCLICAMP_LYRA" placeholder="@IDCLICAMP">
+            <input type="text" id="IDCLIENT_LYRA" placeholder="@IDCLIENT">
+            <input type="password" id="BRAND_LYRA" value="lyra" disabled>
+            <input type="text" id="CLE_TEST_LYRA" placeholder="@CLE_TEST">
+            <input type="text" id="CLE_PROD_LYRA" placeholder="@CLE_PROD">
+            <input type="text" id="REST_PASSWORD_TEST_LYRA" placeholder="@REST_PASSWORD_TEST">
+            <input type="text" id="REST_PASSWORD_LYRA" placeholder="@REST_PASSWORD">
+            <input type="text" id="PUBLIC_KEY_TEST_LYRA" placeholder="@PUBLIC_KEY_TEST">
+            <input type="text" id="PUBLIC_KEY_PROD_LYRA" placeholder="@PUBLIC_KEY_PROD">
+            <input type="text" id="API_KEY256_TEST_LYRA" placeholder="@API_KEY256_TEST">
+            <input type="text" id="API_KEY256_PROD_LYRA" placeholder="@API_KEY256_PROD">
+            <input type="password" id="SHA_256_LYRA" value="1" disabled>
+            <input type="password" id="URL_LYRA" value="https://secure.lyra.com/vads-payment/" disabled>
+            <button onclick="generateText('lyra')">Générer le Texte</button>
+            <div id="generatedTextLyra" class="generated-text-container"></div>
+            <button onclick="copyTextLyra()">Copier le Texte</button>
+        </div>
+
+        <!-- Formulaire Floa -->
+        <div id="floa" class="form-container floa-form">
+            <h2 id="IB">Formulaire Floa</h2>
+            <input type="password" id="SECRET_TEST_FLOA" value="defaultValue" disabled>
+            <input type="text" id="IDCLICAMP_FLOA" placeholder="@IDCLICAMP">
+            <input type="text" id="IDCLIENT_FLOA" placeholder="@IDCLIENT">
+            <input type="password" id="BRAND_FLOA" value="floabank" disabled>
+            <input type="text" id="PWD_TEST_FLOA" placeholder="@PWD_TEST">
+            <input type="text" id="PWD_PROD_FLOA" placeholder="@PWD_PROD">
+            <input type="text" id="USER_TEST_FLOA" placeholder="@USER_TEST">
+            <input type="text" id="USER_PROD_FLOA" placeholder="@USER_PROD">
+            <input type="text" id="CODE_GUICHET_FLOA" placeholder="@CODE_GUICHET">
+            <input type="text" id="SITE_IDS_FLOA" placeholder="@SITE_IDS='SITE_IDS_4_FR,SITE_IDS_3_BE,SITE_IDS_3_EN'" value="SITE_IDS_4_FR" enable>
+            <button onclick="generateText('floa')">Générer le Texte</button>
+            <div id="generatedTextFloa" class="generated-text-container"></div>
+            <button onclick="copyTextFloa()">Copier le Texte</button>
+        </div>
+
+        <!-- Yelloh Form -->
+        <div id="yelloh" class="form-container payzen-form">
+            <h2 id="IB">Formulaire Yelloh</h2>
+            <input type="password" id="SECRET_TEST_YELLOH" value="defaultValue" disabled>
+            <input type="text" id="IDCLICAMP_YELLOH" placeholder="@IDCLICAMP">
+            <input type="text" id="IDCLIENT_YELLOH" placeholder="@IDCLIENT">
+            <input type="text" id="CLE_TEST_YELLOH" placeholder="@CLE_TEST">
+            <input type="text" id="CLE_PROD_YELLOH" placeholder="@CLE_PROD">
+            <input type="text" id="REST_PASSWORD_TEST_YELLOH" placeholder="@REST_PASSWORD_TEST">
+            <input type="text" id="REST_PASSWORD_YELLOH" placeholder="@REST_PASSWORD">
+            <input type="password" id="URL_YELLOH" value="https://secure.payzen.eu/vads-payment/" disabled>
+            <button onclick="generateText('yelloh')">Générer le Texte</button>
+            <div id="generatedTextYelloh" class="generated-text-container"></div>
+            <button onclick="copyTextYelloh()">Copier le Texte</button>
+        </div>
+
+        <!-- Redsys Form -->
+        <div id="redsys" class="form-container payzen-form">
+            <h2 id="IB">Formulaire Redsys</h2>
+            <input type="password" id="SECRET_TEST_REDSYS" value="defaultValue" disabled>
+            <input type="text" id="IDCLICAMP_REDSYS" placeholder="@IDCLICAMP">
+            <input type="text" id="IDCLIENT_REDSYS" placeholder="@IDCLIENT">
+            <input type="text" id="CLAVE_REDSYS" placeholder="@CLAVE">
+            <input type="text" id="TERMINAL_REDSYS" placeholder="@TERMINAL">
+            <input type="password" id="URL_REDSYS" value="https://sis.redsys.es/sis/realizarPago" disabled>
+            <button onclick="generateText('redsys')">Générer le Texte</button>
+            <div id="generatedTextRedsys" class="generated-text-container"></div>
+            <button onclick="copyTextRedsys()">Copier le Texte</button>
+        </div>
+
+        <!-- Systempay Form -->
+        <div id="systempay" class="form-container payzen-form">
+            <h2 id="IB">Formulaire Systempay</h2>
+            <input type="password" id="SECRET_TEST_SYSTEMPAY" value="defaultValue" disabled>
+            <input type="text" id="IDCLICAMP_SYSTEMPAY" placeholder="@IDCLICAMP">
+            <input type="text" id="IDCLIENT_SYSTEMPAY" placeholder="@IDCLIENT">
+            <input type="password" id="BRAND_SYSTEMPAY" value="systempay" disabled>
+            <input type="text" id="CLE_TEST_SYSTEMPAY" placeholder="@CLE_TEST">
+            <input type="text" id="CLE_PROD_SYSTEMPAY" placeholder="@CLE_PROD">
+            <input type="text" id="REST_PASSWORD_SYSTEMPAY" placeholder="@REST_PASSWORD">
+            <input type="text" id="REST_PASSWORD_TEST_SYSTEMPAY" placeholder="@REST_PASSWORD_TEST">
+            <input type="text" id="SHA_256_SYSTEMPAY" placeholder="@SHA_256">
+            <input type="password" id="URL_SYSTEMPAY" value="https://paiement.systempay.fr/vads-payment/" disabled>
+            <button onclick="generateText('systempay')">Générer le Texte</button>
+            <div id="generatedTextSystempay" class="generated-text-container"></div>
+            <button onclick="copyTextSystempay()">Copier le Texte</button>
+        </div>
+
+        <!-- Payline Form -->
+        <div id="payline" class="form-container payzen-form">
+            <h2 id="IB">Formulaire Payline</h2>
+            <input type="password" id="SECRET_TEST_PAYLINE" value="defaultValue" disabled>
+            <input type="text" id="IDCLICAMP_PAYLINE" placeholder="@IDCLICAMP">
+            <input type="text" id="IDCLIENT_PAYLINE" placeholder="@IDCLIENT">
+            <input type="text" id="ACCESS_KEY_PAYLINE" placeholder="@ACCESS_KEY">
+            <input type="text" id="CONTRACT_NUMBER_PAYLINE" placeholder="@CONTRACT_NUMBER">
+            <input type="text" id="MERCHANT_ID_PAYLINE" placeholder="@MERCHANT_ID">
+            <button onclick="generateText('payline')">Générer le Texte</button>
+            <div id="generatedTextPayline" class="generated-text-container"></div>
+            <button onclick="copyTextPayline()">Copier le Texte</button>
+        </div>
+
+        <!-- Paybox Form -->
+        <div id="paybox" class="form-container payzen-form">
+            <h2 id="IB">Formulaire Paybox</h2>
+            <input type="password" id="SECRET_TEST_PAYBOX" value="defaultValue" disabled>
+            <input type="text" id="IDCLIENT_PAYBOX" placeholder="@IDClient">
+            <input type="text" id="IDCLICAMP_PAYBOX" placeholder="@IDCLICAMP">
+            <input type="text" id="PBX_CLE_TEST_PAYBOX" placeholder="@PBX_CLE_TEST">
+            <input type="text" id="PBX_CLE_PROD_PAYBOX" placeholder="@PBX_CLE_PROD">
+            <input type="text" id="RANG_PAYBOX" placeholder="@RANG">
+            <input type="text" id="SITE_PAYBOX" placeholder="@SITE">
+            <input type="text" id="TYPECARTE_PAYBOX" placeholder="@TYPECARTE">
+            <input type="text" id="TYPEPAIEMENT_PAYBOX" placeholder="@TYPEPAIEMENT">
+            <input type="text" id="URL_TEST_PAYBOX" placeholder="@URL_TEST" value="https://preprod-tpeweb.paybox.com/php/" disabled>
+            <input type="text" id="URL_PROD_PAYBOX" placeholder="@URL_PROD" value="https://tpeweb.paybox.com/php/" disabled>
+            <button onclick="generateText('paybox')">Générer le Texte</button>
+            <div id="generatedTextPaybox" class="generated-text-container"></div>
+            <button onclick="copyTextPaybox()">Copier le Texte</button>
+        </div>
+
+        <!-- SPPLUS Form -->
+        <div id="spplus" class="form-container payzen-form">
+            <h2 id="IB">Formulaire SPPLUS</h2>
+            <input type="password" id="SECRET_TEST_SPPLUS" value="defaultValue" disabled>
+            <input type="text" id="IDCLICAMP_SPPLUS" placeholder="@IDCLICAMP">
+            <input type="text" id="IDCLIENT_SPPLUS" placeholder="@IDCLIENT">
+            <input type="password" id="BRAND_SPPLUS" value="systempay" disabled>
+            <input type="text" id="CLE_TEST_SPPLUS" placeholder="@CLE_TEST">
+            <input type="text" id="CLE_PROD_SPPLUS" placeholder="@CLE_PROD">
+            <input type="text" id="REST_PASSWORD_SPPLUS" placeholder="@REST_PASSWORD">
+            <input type="text" id="REST_PASSWORD_TEST_SPPLUS" placeholder="@REST_PASSWORD_TEST">
+            <input type="text" id="SHA_256_SPPLUS" placeholder="@SHA_256">
+            <input type="password" id="URL_SPPLUS" value="https://systempay.cyberpluspaiement.com/vads-payment/" disabled>
+            <button onclick="generateText('spplus')">Générer le Texte</button>
+            <div id="generatedTextSpplus" class="generated-text-container"></div>
+            <button onclick="copyTextSpplus()">Copier le Texte</button>
+        </div>
+
+        <!-- Sogecommerce Form -->
+        <div id="sogecommerce" class="form-container payzen-form">
+            <h2 id="IB">Formulaire Sogecommerce</h2>
+            <input type="password" id="SECRET_TEST_SOGECOMMERCE" value="defaultValue" disabled>
+            <input type="text" id="IDCLICAMP_SOGECOMMERCE" placeholder="@IDCLICAMP">
+            <input type="text" id="IDCLIENT_SOGECOMMERCE" placeholder="@IDCLIENT">
+            <input type="password" id="BRAND_SOGECOMMERCE" value="sogecommerce" disabled>
+            <input type="text" id="CLE_TEST_SOGECOMMERCE" placeholder="@CLE_TEST">
+            <input type="text" id="CLE_PROD_SOGECOMMERCE" placeholder="@CLE_PROD">
+            <input type="text" id="REST_PASSWORD_SOGECOMMERCE" placeholder="@REST_PASSWORD">
+            <input type="text" id="REST_PASSWORD_TEST_SOGECOMMERCE" placeholder="@REST_PASSWORD_TEST">
+            <input type="text" id="SHA_256_SOGECOMMERCE" placeholder="@SHA_256">
+            <input type="password" id="URL_SOGECOMMERCE" value="https://sogecommerce.societegenerale.eu/vads-payment/" disabled>
+            <button onclick="generateText('sogecommerce')">Générer le Texte</button>
+            <div id="generatedTextSogecommerce" class="generated-text-container"></div>
+            <button onclick="copyTextSogecommerce()">Copier le Texte</button>
+        </div>
+
+        <!-- PaymentHub Form -->
+        <div id="paymenthub" class="form-container payzen-form">
+            <h2 id="IB">Formulaire PaymentHub</h2>
+            <input type="password" id="SECRET_TEST_PAYMENTHUB" value="defaultValue" disabled>
+            <input type="text" id="SECRET_PROD_PAYMENTHUB" placeholder="@SECRET_PROD">
+            <input type="text" id="IDCLICAMP_PAYMENTHUB" placeholder="@IDCLICAMP">
+            <input type="text" id="IDCLIENT_PAYMENTHUB" placeholder="@IDCLIENT">
+            <input type="password" id="BRAND_PAYMENTHUB" value="paymentHub" disabled>
+            <input type="text" id="CLE_PAYMENTHUB" placeholder="@CLE">
+            <input type="text" id="PAYEUR_ID_PAYMENTHUB" placeholder="@PAYEUR_ID">
+            <input type="text" id="GATEWAY_OPTION_ID_PAYMENTHUB" placeholder="@GATEWAY_OPTION_ID">
+            <input type="text" id="CURRENCY_PAYMENTHUB" value="978">
+            <button onclick="generateText('paymenthub')">Générer le Texte</button>
+            <div id="generatedTextPaymenthub" class="generated-text-container"></div>
+            <button onclick="copyTextPaymenthub()">Copier le Texte</button>
+            <div id="generatedRequest" class="generated-text-container"></div>
+            <button onclick="copyRequest()">Copier la Request</button>
+        </div>
+
+        <!-- Toast notification -->
+        <div id="toast" class="toast">Texte copié dans le presse-papier !</div>
+        </div>
+        <div class="right-container">
+            <div id="TextTemplates" class="container">
+                <a href="https://septeogroup.sharepoint.com/:x:/r/sites/SequoiaSoft_sequoiasoft-mauguio/_layouts/15/doc2.aspx?sourcedoc=%7B4A3091A1-CBE8-42B8-BDE1-485BDF4D2C3B%7D&file=Comptes%20int%C3%A9grations%20bancaires.xlsx&action=default&mobileredirect=true" target="_blank" class="url-button">
+                    SharePoint IB
+                </a>
+                <h2>URL à copier</h2>
+                <div class="template-field">
+                    <label>THR Test</label>
+                    <input type="text" id="welcomeMessage" value="https://thelisresa.preprod.aws.webcamp.fr/banks/systempay/auto_Response.php" readonly>
+                    <button onclick="copyTemplateText('welcomeMessage')" class="copy-btn"><i class="fas fa-copy"></i></button>
+                </div>
+                <div class="template-field">
+                    <label>THR Prod</label>
+                    <input type="text" id="closingMessage" value="https://thelisresa.webcamp.fr/banks/systempay/auto_Response.php" readonly>
+                    <button onclick="copyTemplateText('closingMessage')" class="copy-btn"><i class="fas fa-copy"></i></button>
+                </div>
+                <div class="template-field">
+                    <label>YHR Test</label>
+                    <input type="text" id="infoRequest" value="https://yelloh.thelisresa.webcamp.fr/banks/systempay/auto_Response.php" readonly>
+                    <button onclick="copyTemplateText('infoRequest')" class="copy-btn"><i class="fas fa-copy"></i></button>
+                </div>
+                <div class="template-field">
+                    <label>YHR Prod</label>
+                    <input type="text" id="prodRequest" value="https://booking.yellohvillage.com/banks/systempay/auto_Response.php" readonly>
+                    <button onclick="copyTemplateText('prodRequest')" class="copy-btn"><i class="fas fa-copy"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="URL-Client" class="content active">
+        <div class="Client">
+            <h2 class="theme-title">URL Prod</h2>
+            <div class="environment-group">
+                <div>
+                    <button class="URL-project-button" data-project="wbcbo" data-url="https://webcampadmin.eseason.com/efs/exportXML2/">Flux XML2</button>
+                    <button class="URL-project-button" data-project="wbcbo" data-url="https://webcampadmin.eseason.com/efs/exportXML/">Flux XML CTV</button>
+                </div>
+                <div>
+                    <button id="openPopup" class="URL-project-button" data-project="swagger" >Swagger EDM</button>
+                    <div class="overlay" id="overlay"></div>
+                    <div class="popup" id="popup">
+                        <h2 style="color: #f2f7fc;">Choisir le connecteur</h2>
+                        <div class="choices">
+                            <div class="choice" data-url="https://edm.eseason.com/crm-connectivity/swagger-ui/index.html?1check=" onclick="choixEffectue(this)">1Check</div>
+                            <div class="choice" data-url="https://edm.eseason.com/crm-connectivity/swagger-ui/index.html?ctoutvert=" onclick="choixEffectue(this)">CToutVert</div>
+                            <div class="choice" data-url="https://edm.eseason.com/crm-connectivity/swagger-ui/index.html?revbell=" onclick="choixEffectue(this)">Revbell</div>
+                        </div> 
+                        <br>
+                        <button id="closePopup">Fermer</button>
+                    </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <h2 class="theme-title">Production Environments</h2>
+            <div class="environment-group">
+                <div>
+                    <h3>Admin Prod</h3>
+                    <button class="URL-project-button" data-project="wbcbo" data-url="https://webcampadmin.eseason.com/WebCampAdmin/">
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC BO
+                    </button>
+                    <button class="URL-project-button" data-project="edm" data-url="https://edmadmin.eseason.com/bo-front/login">
+                        <img src="https://edmadmin.eseason.com/bo-front/favicon/favicon-edm-32px.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>EDM</button>
+                    <button class="URL-project-button" data-project="wbcbo" data-url="https://thelisresa.webcamp.fr/tools/login.php" disabled>
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>CAMPSITE
+                    </button>
+                </div>
+                <div>
+                    <h3>Sandaya Prod</h3>
+                    <button class="URL-project-button" data-project="wbcbo" data-url="https://backoffice.webcamp.fr/WebCampBackOffice/?user=MSANDAY17938&pass=q8o0ukvy">
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC BO
+                    </button>
+                    <button class="URL-project-button" data-project="wbctu" data-url="https://thelisresa.webcamp.fr/?camping=sandaya">
+                        <img src="https://booking.sandaya.eu/views/2010/assets/images/favicon.ico" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC TUNNEL
+                    </button>
+                    <button class="URL-project-button" data-project="mlc" data-url="https://sandaya.multicamp.thelis.fr/WebCampAdmin/">
+                        <img src="https://github.com/JLF-Septeo/mlc-ico/raw/main/mlc.png" alt="Icon" style="width: 17px; height: 19px; vertical-align: middle;"/>MLC
+                    </button>
+                    <button class="URL-project-button" data-project="edm" data-url="https://edm.eseason.com/bo-front/login">
+                        <img src="https://edmadmin.eseason.com/bo-front/favicon/favicon-edm-32px.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>EDM
+                    </button>
+                </div>
+                <div>
+                    <h3>Yelloh Prod</h3>
+                    <button class="URL-project-button" data-project="wbcbo" data-url="https://backoffice.webcamp.fr/WebCampBackOffice/?user=MYELLOH0427&pass=dpvb4mtryj">
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC BO
+                    </button>
+                    <button class="URL-project-button" data-project="wbctu" data-url="https://thelisresa.webcamp.fr/?camping=yelloh">
+                        <img src="https://booking.yellohvillage.com/views/2010/tpl/2516/images/favicon.ico?_=2.62.1.1.0" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC TUNNEL
+                    </button>
+                    <button class="URL-project-button" data-project="edm" data-url="https://edm.eseason.com/bo-front/login">
+                        <img src="https://edmadmin.eseason.com/bo-front/favicon/favicon-edm-32px.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>EDM
+                    </button>
+                </div>
+                <div>
+                    <h3>MS Vacances Prod</h3>
+                    <button class="URL-project-button" data-project="wbcbo" data-url="https://backoffice.webcamp.fr/WebCampBackOffice/?user=MMSVACA71074&pass=6b11qvvt">
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC BO
+                    </button>
+                    <button class="URL-project-button" data-project="wbctu" data-url="https://thelisresa.webcamp.fr/?camping=msvacances">
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC TUNNEL
+                    </button>
+                    <button class="URL-project-button" data-project="mlc" data-url="https://msvacances.multicamp.thelis.fr/WebCampAdmin/">
+                        <img src="https://github.com/JLF-Septeo/mlc-ico/raw/main/mlc.png" alt="Icon" style="width: 17px; height: 19px; vertical-align: middle;"/>MLC
+                    </button>
+                    <button class="URL-project-button" data-project="edm" data-url="https://edm.eseason.com/bo-front/login">
+                        <img src="https://edmadmin.eseason.com/bo-front/favicon/favicon-edm-32px.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>EDM
+                    </button>
+                </div>
+                <div>
+                    <h3>Capfun Prod</h3>
+                    <button class="URL-project-button" data-project="wbcbo" data-url="https://backoffice.webcamp.fr/WebCampBackOffice/?user=MFRANCE878302&pass=nqkozbfj">
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC BO
+                    </button>
+                    <button class="URL-project-button" data-project="wbctu" data-url="https://thelisresa.webcamp.fr/?camping=franceloc">
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC TUNNEL
+                    </button>
+                    <button class="URL-project-button" data-project="mlc" data-url="https://capfun.multicamp.thelis.fr/WebCampAdmin/">
+                        <img src="https://github.com/JLF-Septeo/mlc-ico/raw/main/mlc.png" alt="Icon" style="width: 17px; height: 19px; vertical-align: middle;"/>MLC
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="Client">
+            <h2 class="theme-title">Recette Environments</h2>
+            <div class="environment-group">
+                <div>
+                    <h3>Admin Recette</h3>
+                    <button class="URL-project-button-recette" data-project="wbcbo" data-url="http://bck01a.thelis-preprod.aws.webcamp.fr/WebCampAdmin/faces/login.jsp">
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC BO
+                    </button>
+                    <button class="URL-project-button-recette" data-project="edm" data-url="https://preprod.edm.eseason.com/bo-front/login">
+                        <img src="https://edmadmin.eseason.com/bo-front/favicon/favicon-edm-32px.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>EDM
+                    </button>
+                    <button class="URL-project-button-recette" data-project="wbcbo" data-url="https://thelisresa.preprod.aws.webcamp.fr/tools/login.php" disabled>
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>CAMPSITE
+                    </button>
+                </div>
+                <div>
+                    <h3>Sandaya Recette</h3>
+                    <button class="URL-project-button-recette" data-project="wbcbo" data-url="https://wbc.syr.recette.edm.eseason.com/WebCampBackOffice/?user=MSANDAY17938&pass=q8o0ukvy">
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC BO
+                    </button>
+                    <button class="URL-project-button-recette" data-project="wbctu" data-url="https://resa.syr.recette.edm.eseason.com/tools/getSitesUrls.php?camping=sandaya">
+                        <img src="https://booking.sandaya.eu/views/2010/assets/images/favicon.ico" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC TUNNEL
+                    </button>
+                    <button class="URL-project-button-recette" data-project="mlc" data-url="https://sandaya.recette.multicamp.thelis.fr/WebCampAdmin/">
+                        <img src="https://github.com/JLF-Septeo/mlc-ico/raw/main/mlc.png" alt="Icon" style="width: 17px; height: 19px; vertical-align: middle;"/>MLC
+                    </button>
+                    <button class="URL-project-button-recette" data-project="edm" data-url="https://syr.recette.edm.eseason.com/bo-front">
+                        <img src="https://edmadmin.eseason.com/bo-front/favicon/favicon-edm-32px.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>EDM
+                    </button>
+                </div>
+                <div>
+                    <h3>Yelloh Recette</h3>
+                    <button class="URL-project-button-recette" data-project="wbcbo" data-url="https://yelloh.backoffice.webcamp.fr/WebCampBackOffice/?user=MYELLOH0427&pass=dpvb4mtryj">
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC BO
+                    </button>
+                    <button class="URL-project-button-recette" data-project="wbctu" data-url="https://yelloh.thelisresa.webcamp.fr/multi-list.php?camping=yelloh">
+                        <img src="https://booking.yellohvillage.com/views/2010/tpl/2516/images/favicon.ico?_=2.62.1.1.0" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC TUNNEL
+                    </button>
+                    <button class="URL-project-button-recette" data-project="edm" data-url="https://yelloh.edm.recette.multicamp.thelis.fr/bo-front/login">
+                        <img src="https://edmadmin.eseason.com/bo-front/favicon/favicon-edm-32px.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>EDM
+                    </button>
+                </div>
+                <div>
+                    <h3>MS Vacances Recette</h3>
+                    <button class="URL-project-button-recette" data-project="wbcbo" data-url="https://msv.recette.aws.webcamp.fr/WebCampBackOffice/?user=MMSVACA71074&pass=6b11qvvt">
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC BO
+                    </button>
+                    <button class="URL-project-button-recette" data-project="wbctu" data-url="https://msvresa.recette.aws.webcamp.fr/?camping=msvacances">
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC TUNNEL
+                    </button>
+                    <button class="URL-project-button-recette" data-project="mlc" data-url="https://msv.recette.multicamp.thelis.fr/WebCampAdmin/">
+                        <img src="https://github.com/JLF-Septeo/mlc-ico/raw/main/mlc.png" alt="Icon" style="width: 17px; height: 19px; vertical-align: middle;"/>MLC
+                    </button>
+                </div>
+                <div>
+                    <h3>Capfun Recette</h3>
+                    <button class="URL-project-button-recette" data-project="wbcbo" data-url="https://capfun.recette.aws.webcamp.fr/WebCampBackOffice/?user=MFRANCE878302&pass=nqkozbfj">
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC BO
+                    </button>
+                    <button class="URL-project-button-recette" data-project="wbctu" data-url="https://capfunresa.recette.aws.webcamp.fr/?camping=franceloc">
+                        <img src="https://webcampadmin.eseason.com/WebCampAdmin/img/favicon_esr.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle;"/>WBC TUNNEL
+                    </button>
+                    <button class="URL-project-button-recette" data-project="mlc" data-url="https://capfun.recette.multicamp.thelis.fr/WebCampAdmin/">
+                        <img src="https://github.com/JLF-Septeo/mlc-ico/raw/main/mlc.png" alt="Icon" style="width: 17px; height: 19px; vertical-align: middle;"/>MLC
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Modèle pour ajouter un nouvel environnement
+        <div class="Client">
+            <h2 class="theme-title">Autres</h2>
+            <div class="environment-group">
+                <div>
+                    <h3>Admin Prod</h3>
+                    <button class="URL-project-button" data-project="wbcbo" data-url="https://webcampadmin.eseason.com/WebCampAdmin/">WBC BO</button>
+                    <button class="URL-project-button" data-project="edm" data-url="https://edmadmin.eseason.com/bo-front/login">EDM</button>
+                    <button class="URL-project-button" data-project="wbcbo" data-url="https://thelisresa.webcamp.fr/tools/login.php">CAMPSITE</button>
+                </div>
+            </div>
+        </div>
+        -->
+    </div>
+    <div id="internal" class="content">
+        <div class="internal-container">
+            <div class="internal-tool">
+                <h2 class="theme-title">Outil interne</h2>
+                <div class="environment-internal">
+                    <div>
+                        <h3>Infra</h3>
+                        <button class="URL-internal-button-tool" data-project="edm" data-url="https://septeo.m42cloud.com/wm/login">Matrix42</button>
+                        <button class="URL-internal-button-tool" data-project="edm" data-url="https://sqs.help/">SQS Help</button>
+                    </div>
+                    <div>
+                        <h3>Base de connaissance</h3>
+                        <button class="URL-internal-button-tool" data-project="wbcbo" data-url="https://doc.camping.sequoiasoft.com/xwiki/bin/login/">XWiki</button>
+                    </div>
+                    <div>
+                        <h3>Gestionnaire MDP</h3>
+                        <button class="URL-internal-button-tool" data-project="wbctu" data-url="https://sqspass.sequoiasoft.com/#/login">Vaultwarden</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="internal-internal">
+                <h2 class="theme-title">Autres</h2>
+                <div class="environment-internal">
+                    <div>
+                        <h3>RH</h3>
+                        <button class="URL-internal-button-internal" data-project="mlc" data-url="https://talents.elsatis.fr/prod14/portal/portal.jsp?c=207904254&p=215287785&g=215290518">Foederis</button>
+                        <button class="URL-internal-button-internal" data-project="mlc" data-url="https://my.silae.fr/">My Silae</button>
+                    </div>
+
+                    <div>
+                        <h3>CSE</h3>
+                        <button class="URL-internal-button-internal" data-project="mlc" data-url="https://app.leeto.co/espace-salarie/leeshop/">Leeto</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Modèle pour ajouter un nouvel environnement
+            <div class="Client">
+                <h2 class="theme-title">Autres</h2>
+                <div class="environment-internal">
+                    <div>
+                        <h3>Admin Prod</h3>
+                        <button class="URL-project-button" data-project="wbcbo" data-url="https://webcampadmin.eseason.com/WebCampAdmin/">WBC BO</button>
+                        <button class="URL-project-button" data-project="edm" data-url="https://edmadmin.eseason.com/bo-front/login">EDM</button>
+                        <button class="URL-project-button" data-project="wbcbo" data-url="https://thelisresa.webcamp.fr/tools/login.php">CAMPSITE</button>
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+    </div>
+    <div id="Question" class="content">
+        <h1>Raccourcis</h1>
+        <p>Liste des raccourcis :</p>
+        <p>Alt+A : Ouvre une connexion Assist</p>
+        <p>Alt+J : Ouvre une Jira</p>
+    </div>
+    <div id="api-tester" class="content">
+        <!--<div class="api-tester">
+            <h3>Testeur d'API SOAP</h3>
+            <div id="api-menu">
+                <button onclick="loadForm('api1')">Choix API 1</button>
+                <button onclick="loadForm('api2')">Choix API 2</button>
+            </div>
+            <div id="api-form-container">
+                <label for="api-url">URL de l'API :</label>
+                <input type="text" id="api-url" placeholder="https://api.internelink.test" />
+            
+                <label for="api-method">Méthode :</label>
+                <select id="api-method">
+                    <option value="GET">GET</option>
+                    <option value="POST">POST</option>
+                    <option value="PUT">PUT</option>
+                    <option value="DELETE">DELETE</option>
+                </select>
+            
+                <label for="api-headers">En-têtes (JSON) :</label>
+                <textarea id="api-headers" placeholder='{"Authorization": "Bearer token"}'></textarea>
+            
+                <label for="api-body">Corps de la requête (XML) :</label>
+                <textarea id="api-body" placeholder="<request><param>value</param></request>"></textarea>
+            </div>
+                <button onclick="sendApiRequest()">Envoyer la requête</button>
+            
+                <h4>Résultat :</h4>
+                <pre id="api-response"></pre>
+            
+        </div>-->
+        <form id="soapForm">
+            <input type="text" id="param1" placeholder="Paramètre 1">
+            <input type="text" id="param2" placeholder="Paramètre 2">
+            <button type="button" onclick="callSoapService()">Appeler le service SOAP</button>
+        </form>
+    </div>
+    <div id="json-formatter" class="content">
+        <iframe src="https://jsonformatter.org/" width="100%" height="1200px" style="border:none;"></iframe>
+    </div>
+    
+    <script> /* Script du site général */
+        document.addEventListener('click', function(event) {
+            var menu = document.getElementById('menu');
+            var burgerButton = document.querySelector('.burger');
+            var isClickInsideMenu = menu.contains(event.target);
+            var isClickOnButton = burgerButton.contains(event.target);
+
+            if (!isClickInsideMenu && !isClickOnButton) {
+                menu.classList.remove('show');
+            }
+        });
+
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+
+        function showPage(pageId) {
+            // Masquer toutes les pages
+            var pages = document.querySelectorAll('.content');
+            pages.forEach(function(page) {
+                page.classList.remove('active');
+            });
+
+            // Afficher la page sélectionnée
+            document.getElementById(pageId).classList.add('active');
+
+            // Fermer le menu burger après avoir cliqué sur un lien
+            var menu = document.getElementById('menu');
+            menu.classList.remove('show');
+
+            // Retirer la classe active de tous les éléments du menu
+            var menuItems = document.querySelectorAll('.menu a');
+            menuItems.forEach(function(item) {
+                item.classList.remove('active');
+            });
+
+            // Ajouter la classe active à l'élément du menu correspondant
+            var activeItem = document.querySelector(`.menu a[onclick="showPage('${pageId}')"]`);
+            if (activeItem) {
+                activeItem.classList.add('active');
+            }
+        }
+    </script>
+    <script>
+        function connexionAssist() {
+            const url = 'https://dashboard.rg-supervision.com/lumiere/agentless';
+            window.open(url, "_blank")
+        }
+
+        function connexionJira() {
+            const url = 'https://septeohpa.atlassian.net/jira/';
+            window.open(url, "_blank")
+        }
+
+        function connexionPhone() {
+            const url = 'http://srvmitel.sequoiasoft.com/portal/';
+            window.open(url, "_blank")
+        }
+    </script>
+    <script> /* Script pour Outils Web */
+        function generateRandomPassword(length = 8) {
+            const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+
+        // Tab switching logic
+        const tabs = document.querySelectorAll('.tab');
+        const formSections = document.querySelectorAll('.form-section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and form sections
+                tabs.forEach(t => t.classList.remove('active'));
+                formSections.forEach(f => f.classList.remove('active'));
+
+                // Add active class to clicked tab and corresponding form section
+                tab.classList.add('active');
+                const formId = tab.getAttribute('data-form');
+                document.getElementById(formId).classList.add('active');
+
+                // Reset generated text and open URL button
+                document.getElementById('generatedText').textContent = '';
+                document.getElementById('openURLButton').style.display = 'none';
+                document.getElementById('copyTextInfonet').style.display = 'none';
+            });
+        });
+
+        // Infonet Form Handler
+        const infonetForm = document.getElementById('infonetForm');
+        infonetForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const idClient = document.getElementById('idClient').value;
+            const identifiant = document.getElementById('identifiant').value;
+            const password = generateRandomPassword();
+            
+            const generatedText = `Lien : https://infonet.thelis.fr/fr-default-${idClient}.infonet
+            identifiant infonet : ${identifiant}
+            mot de passe infonet : ${password}
+            mail infonet : ${identifiant}@unicamp.com`;
+            
+            updateGeneratedText(generatedText);
+            CopyTextInfonet(generatedText);
+        });
+
+        // Bank THR Form Handler
+        const bankTHRForm = document.getElementById('bankTHRForm');
+        bankTHRForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const campingCode = document.getElementById('campingCodeTHR').value;
+            const transactionNumber = document.getElementById('transactionNumberTHR').value;
+            const idOrder = document.getElementById('idOrderTHR').value;
+            
+            const generatedText = `https://thelisresa.webcamp.fr/banks/bankWS.php?camping=${campingCode}&transactionNumber=${transactionNumber}&idOrderWBC=${idOrder}&fct=getInfo`;
+            
+            updateGeneratedText(generatedText);
+            setupOpenURLButton(generatedText);
+        });
+
+        // Bank SYR Form Handler
+        const bankSYRForm = document.getElementById('bankSYRForm');
+        bankSYRForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const campingCode = document.getElementById('campingCodeSYR').value;
+            const transactionNumber = document.getElementById('transactionNumberSYR').value;
+            const idOrder = document.getElementById('idOrderSYR').value;
+            
+            const generatedText = `https://sandayaresa.webcamp.fr/banks/bankWS.php?camping=${campingCode}&transactionNumber=${transactionNumber}&idOrderWBC=${idOrder}&fct=getInfo`;
+            
+            updateGeneratedText(generatedText);
+            setupOpenURLButton(generatedText);
+        });
+
+        // Bank YHR Form Handler
+        const bankYHRForm = document.getElementById('bankYHRForm');
+        bankYHRForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const campingCode = document.getElementById('campingCodeYHR').value;
+            const transactionNumber = document.getElementById('transactionNumberYHR').value;
+            const idOrder = document.getElementById('idOrderYHR').value;
+            
+            const generatedText = `https://yellohresa.aws.webcamp.fr/banks/bankWS.php?camping=${campingCode}&transactionNumber=${transactionNumber}&idOrderWBC=${idOrder}&fct=getInfo`;
+            
+            updateGeneratedText(generatedText);
+            setupOpenURLButton(generatedText);
+        });
+
+        // Reset Context Form Handler
+        const resetContextForm = document.getElementById('resetContextForm');
+        resetContextForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const idClicamp = document.getElementById('idClicampReset').value;
+            const idSite = document.getElementById('idSiteReset').value;
+            const langue = document.getElementById('langueReset').value;
+            const idOperateur = document.getElementById('idOperateurReset').value;
+            
+            const generatedText = `http://thelisresa.webcamp.fr/import.php?Idclicamp=${idClicamp}&force=1&only-site=${idSite}&only-lang=${langue}&only-operator=${idOperateur}`;
+            
+            updateGeneratedText(generatedText);
+            setupOpenURLButton(generatedText);
+        });
+
+        //Reload Order
+        const reloadOrderForm = document.getElementById('reloadOrderForm');
+        reloadOrderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const transactionNumber = document.getElementById('idTransaction').value;
+            
+            const generatedText = `https://thelisresa.webcamp.fr/reloadOrders.php?idPay=${transactionNumber}`;
+            
+            updateGeneratedText(generatedText);
+            setupOpenURLButton(generatedText);
+        });
+
+        //Webcamp picture
+        const wbcPictureForm = document.getElementById('wbcPictureForm');
+        wbcPictureForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const enterpriseNumber = document.getElementById('idEntreUnicamp').value;
+            
+            const generatedText = `https://webcampadmin.eseason.com/efs/base1/${enterpriseNumber}/`;
+            
+            updateGeneratedText(generatedText);
+            setupOpenURLButton(generatedText);
+        });
+
+        function openInventory() {
+            const url = 'https://thelisresa.webcamp.fr/api_tripadvisor/hotel_inventory/?api_version=4';
+            window.open(url, "_blank")
+        }
+
+        // TripAdvisor Form 
+        function generateUrl() {
+            const start_date = document.getElementById("start_date").value;
+            const end_date = document.getElementById("end_date").value;
+            const partner_id = document.getElementById("partner_id").value;
+        
+            if (!partner_id) {
+                document.getElementById("generatedText").innerHTML = '<span class="error-message">Veuillez indiquer l\'ID partenaire.</span>';
+                return;
+            }
+        
+            if (!start_date || !end_date) {
+                document.getElementById("generatedText").innerHTML = '<span class="error-message">Veuillez indiquer les dates de début et fin de séjour.</span>';
+                return;
+            }
+        
+            const defaultValues = {
+                lang: "fr",
+                num_adults: "2",
+                num_rooms: "1",
+                currency: "EUR",
+                user_country: "FR",
+                device_type: "d"
+            };
+        
+            // On n'utilise plus la valeur par défaut pour partner_id puisqu'on exige qu'il soit saisi
+            const lang = document.getElementById("lang").value || defaultValues.lang;
+            const num_adults = document.getElementById("num_adults").value || defaultValues.num_adults;
+            const num_rooms = document.getElementById("num_rooms").value || defaultValues.num_rooms;
+            const currency = document.getElementById("currency").value || defaultValues.currency;
+            const user_country = document.getElementById("user_country").value || defaultValues.user_country;
+            const device_type = document.getElementById("device_type").value || defaultValues.device_type;
+        
+            const generatedText = `https://thelisresa.webcamp.fr/api_tripadvisor/hotel_availability/?api_version=4&hotels=%5B%7B%22ta_id%22:%22%22,%22partner_id%22:%22${partner_id}%22,%22partner_url%22:%22%22%7D%5D&checkin=${start_date}&checkout=${end_date}&lang=${lang}&num_adults=${num_adults}&num_rooms=${num_rooms}&currency=${currency}&user_country=${user_country}&device_type=${device_type}`;
+        
+            // Mettre à jour le texte généré
+            document.getElementById("generatedText").textContent = generatedText;
+            
+            // Activer le bouton pour ouvrir l'URL si nécessaire
+            const openURLButton = document.getElementById("openURLButton");
+            if (openURLButton) {
+                openURLButton.style.display = "block";  // Ajoutez cette ligne
+                openURLButton.onclick = () => window.open(generatedText, '_blank');
+            }
+        }
+
+        // Shared function to update generated text
+        function updateGeneratedText(text) {
+            const generatedTextElement = document.getElementById('generatedText');
+            generatedTextElement.textContent = text;
+        }
+
+        // Function to set up Open URL button
+        function setupOpenURLButton(url) {
+            const openURLButton = document.getElementById('openURLButton');
+            openURLButton.style.display = 'block';
+            
+            openURLButton.onclick = function() {
+                // Copy URL to clipboard
+                navigator.clipboard.writeText(url).then(function() {
+                    // Open URL in new window/tab
+                    window.open(url, '_blank');
+                }, function(err) {
+                    console.error('Could not copy text: ', err);
+                });
+            };
+        }
+
+        function CopyTextInfonet(url) {
+            const copyTextInfonet = document.getElementById('copyTextInfonet');
+            copyTextInfonet.style.display = 'block';
+            
+            copyTextInfonet.onclick = function() {
+                navigator.clipboard.writeText(url).then(()=> {
+                showToast("Texte copié dans le presse-papier !");
+                });
+            };
+        }
+    </script>
+    <script> /* Script pour Intégration Bancaire */
+        function showForm(formId) {
+            // Masque tous les formulaires
+            const forms = document.querySelectorAll('.form-container');
+            forms.forEach(form => form.classList.remove('active'));
+
+            // Affiche le formulaire sélectionné
+            const selectedForm = document.getElementById(formId);
+            selectedForm.classList.add('active');
+        }
+
+        function generateText(form) {
+            let variables = {};
+            switch(form) {
+                case 'payzen':
+                    variables = {
+                        SECRET_TEST: 'defaultValue',
+                        IDCLICAMP: document.getElementById('IDCLICAMP').value,
+                        IDCLIENT: document.getElementById('IDCLIENT').value,
+                        BRAND: 'payzen',
+                        CLE_TEST: document.getElementById('CLE_TEST').value,
+                        CLE_PROD: document.getElementById('CLE_PROD').value,
+                        REST_PASSWORD: document.getElementById('REST_PASSWORD').value,
+                        REST_PASSWORD_TEST: document.getElementById('REST_PASSWORD_TEST').value,
+                        SHA_256: document.getElementById('SHA_256').value,
+                        URL: 'https://secure.payzen.eu/vads-payment/'
+                    };
+                    const text = Object.keys(variables).map(key => `SET @${key}='${variables[key]}';`).join('\n');
+                    document.getElementById('generatedText_IB').textContent = text;
+                    break;
+                case 'lyra':
+                    variables = {
+                        SECRET_TEST: 'defaultValue',
+                        IDCLICAMP: document.getElementById('IDCLICAMP_LYRA').value,
+                        IDCLIENT: document.getElementById('IDCLIENT_LYRA').value,
+                        BRAND: 'lyra',
+                        CLE_TEST: document.getElementById('CLE_TEST_LYRA').value,
+                        CLE_PROD: document.getElementById('CLE_PROD_LYRA').value,
+                        REST_PASSWORD_TEST: document.getElementById('REST_PASSWORD_TEST_LYRA').value,
+                        REST_PASSWORD: document.getElementById('REST_PASSWORD_LYRA').value,
+                        PUBLIC_KEY_TEST: document.getElementById('PUBLIC_KEY_TEST_LYRA').value,
+                        PUBLIC_KEY_PROD: document.getElementById('PUBLIC_KEY_PROD_LYRA').value,
+                        API_KEY256_TEST: document.getElementById('API_KEY256_TEST_LYRA').value,
+                        API_KEY256_PROD: document.getElementById('API_KEY256_PROD_LYRA').value,
+                        SHA_256: '1',
+                        URL: 'https://secure.lyra.com/vads-payment/'
+                    };
+                    const textLyra = Object.keys(variables).map(key => `SET @${key}='${variables[key]}';`).join('\n');
+                    document.getElementById('generatedTextLyra').textContent = textLyra;
+                    break;
+                case 'floa':
+                    variables = {
+                        SECRET_TEST: 'defaultValue',
+                        IDCLICAMP: document.getElementById('IDCLICAMP_FLOA').value,
+                        IDCLIENT: document.getElementById('IDCLIENT_FLOA').value,
+                        BRAND: 'floabank',
+                        PWD_TEST: document.getElementById('PWD_TEST_FLOA').value,
+                        PWD_PROD: document.getElementById('PWD_PROD_FLOA').value,
+                        USER_TEST: document.getElementById('USER_TEST_FLOA').value,
+                        USER_PROD: document.getElementById('USER_PROD_FLOA').value,
+                        CODE_GUICHET: document.getElementById('CODE_GUICHET_FLOA').value,
+                        SITE_IDS: document.getElementById('SITE_IDS_FLOA').value
+                    };
+                    const textFloa = Object.keys(variables).map(key => `SET @${key}='${variables[key]}';`).join('\n');
+                    document.getElementById('generatedTextFloa').textContent = textFloa;
+                    break;
+                case 'yelloh':
+                    variables = {
+                        SECRET_TEST: 'defaultValue',
+                        IDCLICAMP: document.getElementById('IDCLICAMP_YELLOH').value,
+                        IDCLIENT: document.getElementById('IDCLIENT_YELLOH').value,
+                        CLE_TEST: document.getElementById('CLE_TEST_YELLOH').value,
+                        CLE_PROD: document.getElementById('CLE_PROD_YELLOH').value,
+                        REST_PASSWORD_TEST: document.getElementById('REST_PASSWORD_TEST_YELLOH').value,
+                        REST_PASSWORD: document.getElementById('REST_PASSWORD_YELLOH').value,
+                        URL: 'https://secure.payzen.eu/vads-payment/'
+                    };
+                    const textYelloh = Object.keys(variables).map(key => `SET @${key}='${variables[key]}';`).join('\n');
+                    document.getElementById('generatedTextYelloh').textContent = textYelloh;
+                    break;
+                case 'redsys':
+                    variables = {
+                        SECRET_TEST: 'defaultValue',
+                        IDCLICAMP: document.getElementById('IDCLICAMP_REDSYS').value,
+                        IDCLIENT: document.getElementById('IDCLIENT_REDSYS').value,
+                        CLAVE: document.getElementById('CLAVE_REDSYS').value,
+                        TERMINAL: document.getElementById('TERMINAL_REDSYS').value,
+                        URL: 'https://sis.redsys.es/sis/realizarPago'
+                    };
+                    const textRedsys = Object.keys(variables).map(key => `SET @${key}='${variables[key]}';`).join('\n');
+                    document.getElementById('generatedTextRedsys').textContent = textRedsys;
+                    break;
+                case 'systempay':
+                    variables = {
+                        SECRET_TEST: 'defaultValue',
+                        IDCLICAMP: document.getElementById('IDCLICAMP_SYSTEMPAY').value,
+                        IDCLIENT: document.getElementById('IDCLIENT_SYSTEMPAY').value,
+                        BRAND: 'systempay',
+                        CLE_TEST: document.getElementById('CLE_TEST_SYSTEMPAY').value,
+                        CLE_PROD: document.getElementById('CLE_PROD_SYSTEMPAY').value,
+                        REST_PASSWORD: document.getElementById('REST_PASSWORD_SYSTEMPAY').value,
+                        REST_PASSWORD_TEST: document.getElementById('REST_PASSWORD_TEST_SYSTEMPAY').value,
+                        SHA_256: document.getElementById('SHA_256_SYSTEMPAY').value,
+                        URL: 'https://paiement.systempay.fr/vads-payment/'
+                    };
+                    const textSystempay = Object.keys(variables).map(key => `SET @${key}='${variables[key]}';`).join('\n');
+                    document.getElementById('generatedTextSystempay').textContent = textSystempay;
+                    break;
+                case 'payline':
+                    variables = {
+                        SECRET_TEST: 'defaultValue',
+                        IDCLICAMP: document.getElementById('IDCLICAMP_PAYLINE').value,
+                        IDCLIENT: document.getElementById('IDCLIENT_PAYLINE').value,
+                        ACCESS_KEY: document.getElementById('ACCESS_KEY_PAYLINE').value,
+                        CONTRACT_NUMBER: document.getElementById('CONTRACT_NUMBER_PAYLINE').value,
+                        MERCHANT_ID: document.getElementById('MERCHANT_ID_PAYLINE').value
+                    };
+                    const textPayline = Object.keys(variables).map(key => `SET @${key}='${variables[key]}';`).join('\n');
+                    document.getElementById('generatedTextPayline').textContent = textPayline;
+                    break;
+                case 'paybox':
+                    variables = {
+                        SECRET_TEST: 'defaultValue',
+                        IDCLIENT: document.getElementById('IDCLIENT_PAYBOX').value,
+                        IDCLICAMP: document.getElementById('IDCLICAMP_PAYBOX').value,
+                        PBX_CLE_TEST: document.getElementById('PBX_CLE_TEST_PAYBOX').value,
+                        PBX_CLE_PROD: document.getElementById('PBX_CLE_PROD_PAYBOX').value,
+                        RANG: document.getElementById('RANG_PAYBOX').value,
+                        SITE: document.getElementById('SITE_PAYBOX').value,
+                        TYPECARTE: document.getElementById('TYPECARTE_PAYBOX').value,
+                        TYPEPAIEMENT: document.getElementById('TYPEPAIEMENT_PAYBOX').value,
+                        URL_TEST: 'https://preprod-tpeweb.paybox.com/php/',
+                        URL_PROD: 'https://tpeweb.paybox.com/php/'
+                    };
+                    const textPaybox = Object.keys(variables).map(key => `SET @${key}='${variables[key]}';`).join('\n');
+                    document.getElementById('generatedTextPaybox').textContent = textPaybox;
+                    break;
+                case 'spplus':
+                    variables = {
+                        SECRET_TEST: 'defaultValue',
+                        IDCLICAMP: document.getElementById('IDCLICAMP_SPPLUS').value,
+                        IDCLIENT: document.getElementById('IDCLIENT_SPPLUS').value,
+                        BRAND: 'systempay',
+                        CLE_TEST: document.getElementById('CLE_TEST_SPPLUS').value,
+                        CLE_PROD: document.getElementById('CLE_PROD_SPPLUS').value,
+                        REST_PASSWORD: document.getElementById('REST_PASSWORD_SPPLUS').value,
+                        REST_PASSWORD_TEST: document.getElementById('REST_PASSWORD_TEST_SPPLUS').value,
+                        SHA_256: document.getElementById('SHA_256_SPPLUS').value,
+                        URL: 'https://systempay.cyberpluspaiement.com/vads-payment/'
+                    };
+                    const textSpplus = Object.keys(variables).map(key => `SET @${key}='${variables[key]}';`).join('\n');
+                    document.getElementById('generatedTextSpplus').textContent = textSpplus;
+                    break;
+                case 'sogecommerce':
+                    variables = {
+                        SECRET_TEST: 'defaultValue',
+                        IDCLICAMP: document.getElementById('IDCLICAMP_SOGECOMMERCE').value,
+                        IDCLIENT: document.getElementById('IDCLIENT_SOGECOMMERCE').value,
+                        BRAND: 'sogecommerce',
+                        CLE_TEST: document.getElementById('CLE_TEST_SOGECOMMERCE').value,
+                        CLE_PROD: document.getElementById('CLE_PROD_SOGECOMMERCE').value,
+                        REST_PASSWORD: document.getElementById('REST_PASSWORD_SOGECOMMERCE').value,
+                        REST_PASSWORD_TEST: document.getElementById('REST_PASSWORD_TEST_SOGECOMMERCE').value,
+                        SHA_256: document.getElementById('SHA_256_SOGECOMMERCE').value,
+                        URL: 'https://sogecommerce.societegenerale.eu/vads-payment/'
+                    };
+                    const textSogecommerce = Object.keys(variables).map(key => `SET @${key}='${variables[key]}';`).join('\n');
+                    document.getElementById('generatedTextSogecommerce').textContent = textSogecommerce;
+                    break;
+                case 'paymenthub':
+                    variables = {
+                        SECRET_TEST: 'defaultValue',
+                        SECRET_PROD: document.getElementById('SECRET_PROD_PAYMENTHUB').value,
+                        IDCLICAMP: document.getElementById('IDCLICAMP_PAYMENTHUB').value,
+                        IDCLIENT: document.getElementById('IDCLIENT_PAYMENTHUB').value,
+                        BRAND: 'paymentHub',
+                        CLE: document.getElementById('CLE_PAYMENTHUB').value,
+                        PAYEUR_ID: document.getElementById('PAYEUR_ID_PAYMENTHUB').value,
+                        GATEWAY_OPTION_ID: document.getElementById('GATEWAY_OPTION_ID_PAYMENTHUB').value,
+                        CURRENCY: '978'
+                    };
+                    const textPaymenthub = Object.keys(variables).map(key => `SET @${key}='${variables[key]}';`).join('\n');
+                    document.getElementById('generatedTextPaymenthub').textContent = textPaymenthub;
+                    break;
+            }
+        }
+
+        function copyText() {
+            const textToCopy = document.getElementById('generatedText_IB').textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast("Texte copié dans le presse-papier !");
+            });
+        }
+
+        function copyTextLyra() {
+            const textToCopy = document.getElementById('generatedTextLyra').textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast("Texte copié dans le presse-papier !");
+            });
+        }
+
+        function copyTextFloa() {
+            const textToCopy = document.getElementById('generatedTextFloa').textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast("Texte copié dans le presse-papier !");
+            });
+        }
+
+        function copyTextYelloh() {
+            const textToCopy = document.getElementById('generatedTextYelloh').textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast("Texte copié dans le presse-papier !");
+            });
+        }
+
+        function copyTextRedsys() {
+            const textToCopy = document.getElementById('generatedTextRedsys').textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast("Texte copié dans le presse-papier !");
+            });
+        }
+
+        function copyTextSystempay() {
+            const textToCopy = document.getElementById('generatedTextSystempay').textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast("Texte copié dans le presse-papier !");
+            });
+        }
+
+        function copyTextPayline() {
+            const textToCopy = document.getElementById('generatedTextPayline').textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast("Texte copié dans le presse-papier !");
+            });
+        }
+
+        function copyTextPaybox() {
+            const textToCopy = document.getElementById('generatedTextPaybox').textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast("Texte copié dans le presse-papier !");
+            });
+        }
+
+        function copyTextSpplus() {
+            const textToCopy = document.getElementById('generatedTextSpplus').textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast("Texte copié dans le presse-papier !");
+            });
+        }
+
+        function copyTextSogecommerce() {
+            const textToCopy = document.getElementById('generatedTextSogecommerce').textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast("Texte copié dans le presse-papier !");
+            });
+        }
+
+        function copyTextPaymenthub() {
+            const textToCopy = document.getElementById('generatedTextPaymenthub').textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast("Texte copié dans le presse-papier !");
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById("toast");
+            toast.textContent = message;
+            toast.style.backgroundColor = "#4caf50";
+            toast.style.display = "block";
+            setTimeout(() => {
+                toast.style.display = "none";
+            }, 2000);
+        }
+
+        function copyTemplateText(elementId) {
+            const input = document.getElementById(elementId);
+            input.select();
+            document.execCommand('copy');
+            
+            // Désélectionner le texte
+            input.blur();
+            
+            // Afficher une notification
+            showToast('Texte copié !');
+        }
+    </script>
+    <script> /* Script URL Prod/Recette */
+       document.addEventListener('DOMContentLoaded', () => {
+            const projectButtons = document.querySelectorAll('.URL-project-button, .URL-project-button-recette, .URL-internal-button-tool, .URL-internal-button-internal');
+
+            projectButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const url = button.dataset.url;
+                    if (url) {
+                        window.open(url, '_blank');
+                    }
+                });
+            });
+        }); 
+    </script>
+    <script> /* Switcher Dark/Light theme*/
+        const toggleButton = document.getElementById('theme-toggle');
+
+        toggleButton.addEventListener('click', () => {
+            // Basculer entre les thèmes en ajoutant/retirant la classe sur <body>
+            document.body.classList.toggle('light-theme');
+
+            // Changer l'icône dynamiquement
+            const isLightTheme = document.body.classList.contains('light-theme');
+            const icon = isLightTheme ? 'fa-moon' : 'fa-sun';
+            toggleButton.innerHTML = `<i class="fas ${icon}"></i>`;
+        });
+    </script>
+    <script>
+        document.addEventListener('keydown', function (event) {
+            if (event.altKey && (event.key === 'a' || event.key === 'A')) {
+                event.preventDefault(); // Empêche le comportement par défaut (si existant)
+                document.getElementById('assistButton').click(); 
+            } else if (event.altKey && (event.key === 'j' || event.key === 'J')) {
+                event.preventDefault();
+                document.getElementById('jiraButton').click(); 
+            } else if (event.altKey && (event.key === 'c' || event.key === 'C')) {
+                event.preventDefault();
+                document.getElementById('button3').click(); 
+            }
+        });
+    </script>
+    <script>
+        async function sendApiRequest() {
+            const url = document.getElementById("api-url").value;
+            const method = document.getElementById("api-method").value;
+            const headers = JSON.parse(document.getElementById("api-headers").value || "{}");
+            const body = document.getElementById("api-body").value;
+
+            try {
+                const response = await fetch(url, {
+                    method: method,
+                    headers: headers,
+                    body: method !== "GET" ? body : null,
+                });
+
+                const result = await response.text();
+                document.getElementById("api-response").textContent = result;
+            } catch (error) {
+                document.getElementById("api-response").textContent = "Erreur : " + error.message;
+            }
+        }
+    </script>
+    <script>
+        function loadForm(api) {
+            const container = document.getElementById('api-form-container');
+            let formHtml = '';
+
+            switch (api) {
+                case 'api1': // Exemple pour API 1 (GET)
+                    formHtml = `
+                        <form id="api1-form">
+                            <h2>Tester API 1 (GET)</h2>
+                            <label for="api-url">URL :</label>
+                            <input type="text" id="api-url" name="url" value="https://jsonplaceholder.typicode.com/posts" readonly>
+                            <label for="api-method">Méthode :</label>
+                            <input type="text" id="api-method" name="method" value="GET" readonly>
+                            <label for="api-headers">En-tête :</label>
+                            <textarea id="api-headers" name="headers" readonly>{ "Content-Type": "application/json" }</textarea>
+                            <label for="api-body">Corps de la requête (XML) :</label>
+                            <textarea id="api-body" placeholder="<request><param>value</param></request>"></textarea>
+                        </form>`;
+                    break;
+
+                case 'api2': // Exemple pour API 2 (POST)
+                    formHtml = `
+                        <form id="api2-form">
+                            <h2>Tester API 2 (POST)</h2>
+                            <label for="api-url">URL :</label>
+                            <input type="text" id="api-url" name="url" value="https://jsonplaceholder.typicode.com/posts" readonly>
+                            <label for="api-method">Méthode :</label>
+                            <input type="text" id="api-method" name="method" value="POST" readonly>
+                            <label for="api-headers">En-tête :</label>
+                            <textarea id="api-headers" name="headers" readonly>{ "Content-Type": "application/json" }</textarea>
+                            <label for="api-body">Corps de requête :</label>
+                            <textarea id="api-body" name="body">{ "title": "foo", "body": "bar", "userId": 1 }</textarea>
+                        </form>`;
+                    break;
+
+                case 'api3': // Exemple pour API 3 (PUT)
+                    formHtml = `
+                        <form id="api3-form">
+                            <h2>Tester API 3 (PUT)</h2>
+                            <label for="api-url">URL :</label>
+                            <input type="text" id="api-url" name="url" value="https://jsonplaceholder.typicode.com/posts/1" readonly>
+                            <label for="api-method">Méthode :</label>
+                            <input type="text" id="api-method" name="method" value="PUT" readonly>
+                            <label for="api-headers">En-tête :</label>
+                            <textarea id="api-headers" name="headers" readonly>{ "Content-Type": "application/json" }</textarea>
+                            <label for="api-body">Corps de requête :</label>
+                            <textarea id="api-body" name="body">{ "id": 1, "title": "updated", "body": "bar", "userId": 1 }</textarea>
+                        </form>`;
+                    break;
+
+                default:
+                    formHtml = `<p>Veuillez sélectionner une API pour afficher son formulaire.</p>`;
+            }
+
+            container.innerHTML = formHtml;
+        }
+
+    </script>
+    <script src="path/to/soapjs/soapclient.js">
+        function callSoapService() {
+            SOAPClient.invoke(
+                "https://beta.webcamp.fr/WebCampServices/WebCampServicesBean?wsdl",
+                "cpg_Context",
+                {"param1": document.getElementById('param1').value, "param2": document.getElementById('param2').value},
+                true,
+                function(response) {
+                console.log("Réponse du service SOAP:", response);
+                // Traiter la réponse ici
+                },
+                function(error) {
+                console.error("Erreur SOAP:", error);
+                // Gérer l'erreur ici
+                }
+            );
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Sélection des éléments
+            const openPopup = document.getElementById("openPopup");
+            const closePopup = document.getElementById("closePopup");
+            const popup = document.getElementById("popup");
+            const overlay = document.getElementById("overlay");
+
+            // Ouvrir la popup
+            openPopup.addEventListener("click", function () {
+                popup.style.display = "block";
+                overlay.style.display = "block";
+            });
+
+            // Fermer la popup
+            closePopup.addEventListener("click", function () {
+                popup.style.display = "none";
+                overlay.style.display = "none";
+            });
+
+            // Fonction qui ouvre un lien selon le choix
+            window.choixEffectue = function (element) {
+                const url = element.dataset.url;
+                if (url) {
+                    window.open(url, "_blank");
+                }
+                popup.style.display = "none";
+                overlay.style.display = "none";
+            };
+        });
+    </script>
+</body>
+</html>

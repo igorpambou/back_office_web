@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONNEXION</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Couleurs du Thème Sombre (identique à votre code) */
+        :root {
+            --bg-color: #121212;
+            --sidebar-bg-color: #1e1e1e;
+            --text-color: #fff;
+            --secondary-text-color: #ddd;
+            --table-bg-color: #222;
+            --table-hover-color: #333;
+            --border-color: #444;
+            --accent-color: #6777ef;
+            --accent-hover-color: #5564d8;
+            --card-bg-color: #2d2d2d;
+            --input-border-color: #555;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        /* Styles de la Barre Latérale (identique à votre code) */
+        .sidebar {
+            width: 250px;
+            background-color: var(--sidebar-bg-color);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 180px;
+            color: #ff9800;
+            padding: 10px 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 1px;
+        }
+
+        .user-info p {
+            font-size: 14px;
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .settings-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--secondary-text-color);
+        }
+
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .main-nav li a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: var(--secondary-text-color);
+            border-radius: 8px;
+            transition: background-color 0.2s;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .main-nav li a:hover,
+        .main-nav li a.active {
+            background-color: #333;
+            color: var(--text-color);
+        }
+
+        .main-nav li a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        .badge {
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: 50%;
+            padding: 4px 8px;
+            font-size: 12px;
+            margin-left: auto;
+        }
+
+        .bottom-nav {
+            margin-top: auto;
+        }
+
+        .bottom-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bottom-nav li a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: var(--secondary-text-color);
+            border-radius: 8px;
+            transition: background-color 0.2s;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .bottom-nav li a:hover {
+            background-color: #333;
+            color: var(--text-color);
+        }
+
+
+        /* Styles du Contenu Principal (identique à votre code) */
+        .main-content {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .content-header {
+            margin-bottom: 30px;
+        }
+
+        .content-header h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #ff5621;
+        }
+
+        /* Styles de la Section des Données (identique à votre code) */
+        .data-section {
+            background-color: var(--table-bg-color);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .employee-header {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .employee-header h2 {
+            font-size: 20px;
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .employee-header p {
+            font-size: 14px;
+            color: var(--secondary-text-color);
+            margin: 0;
+        }
+
+        .data-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--input-border-color);
+            border-radius: 8px;
+            padding: 5px;
+            width: 40%;
+            background-color: #1e1e1e;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            padding: 8px;
+            width: 85%;
+            background-color: transparent;
+            color: var(--text-color);
+        }
+
+        .search-bar button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--secondary-text-color);
+        }
+
+        .add-employee-btn {
+            background-color: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .add-employee-btn:hover {
+            background-color: var(--accent-hover-color);
+        }
+
+        .edit-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--secondary-text-color);
+        }
+
+        .budget-summary {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .budget-card {
+            padding: 20px;
+            background-color: var(--card-bg-color);
+            border-radius: 8px;
+            width: 24%;
+        }
+
+        .budget-card p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--secondary-text-color);
+            text-align: center;
+        }
+
+        .budget-card .amount {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 5px;
+            color: var(--text-color);
+        }
+
+        /* Styles du Tableau (identique à votre code) */
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: var(--text-color);
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        tbody tr:hover {
+            background-color: var(--table-hover-color);
+        }
+
+        .edit-action,
+        .delete-action {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--secondary-text-color);
+            padding: 5px;
+        }
+
+        .password-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .password-mask {
+            cursor: pointer;
+            display: inline-block; /* Important pour l'alignement horizontal */
+        }
+
+        .password-text {
+            display: none; /* Initialement caché */
+            top: 0;
+            left: 0;
+            display: inline-block; /* Important pour l'alignement horizontal */
+        }
+
+        .password-container span {
+            display: inline-block; /* Pour que les éléments soient sur la même ligne */
+            vertical-align: middle; /* Aligne verticalement les éléments */
+        }
+
+        .copy-button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--secondary-text-color);
+            padding: 5px;
+            font-size: 14px;
+            margin-left: 10px; /* Ajout de l'espace à gauche */
+        }
+
+        .copy-button:hover {
+            color: var(--text-color);
+        }
+
+        .identifier-container {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+
+    <script>
+        function togglePassword(elementId) {
+            const passwordContainer = document.getElementById(elementId);
+            const passwordMask = passwordContainer.querySelector('.password-mask');
+            const passwordText = passwordContainer.querySelector('.password-text');
+            const copyButton = passwordContainer.querySelector('.copy-button');
+
+            if (passwordMask.style.display !== 'none') {
+                passwordMask.style.display = 'none';
+                passwordText.style.display = 'inline-block';
+                copyButton.style.display = 'none';
+            } else {
+                passwordMask.style.display = 'inline-block';
+                passwordText.style.display = 'none';
+                copyButton.style.display = 'inline';
+            }
+        }
+
+        function copyToClipboard(elementId, element) {
+            let text;
+            if (elementId.startsWith('password-row')) {
+                const passwordContainer = document.getElementById(elementId);
+                text = passwordContainer.querySelector('.password-text').textContent;
+            } else {
+                text = document.getElementById(elementId).textContent.trim();
+            }
+
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    element.textContent = "Copié!";
+                    setTimeout(() => {
+                        element.textContent = "Copier";
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Erreur lors de la copie: ', err);
+                    alert('Erreur lors de la copie dans le presse-papier.');
+                });
+        }
+
+        // Hide passwords and buttons on page load
+        window.onload = () => {
+            document.querySelectorAll('.password-container').forEach(container => {
+                const passwordMask = container.querySelector('.password-mask');
+                const passwordText = container.querySelector('.password-text');
+                const copyButton = container.querySelector('.copy-button');
+
+                passwordMask.style.display = 'inline-block';
+                passwordText.style.display = 'none';
+                copyButton.style.display = 'inline';
+            });
+        };
+    </script>
+</head>
+
+<body>
+<div class="container">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="user-info">
+                <img src="https://www.eseason.com/wp-content/uploads/2023/10/logo-eseason-1.png" alt="eSeason Logo" class="logo" id="element_cote_logo">
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#"><i class="fas fa-search"></i>Rechercher</a></li>
+                <li><a href="#"><i class="fas fa-table"></i>Table de Données</a></li>
+                <li><a href="#"><i class="fas fa-box"></i>Produit</a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i>Analytique</a></li>
+                <li><a href="#"><i class="fas fa-calendar-alt"></i>Calendrier <span class="badge">15</span></a></li>
+                <li><a href="#"><i class="fas fa-comment-dots"></i>Messagerie</a></li>
+                <li><a href="#"><i class="fab fa-bitcoin"></i>Crypto</a></li>
+            </ul>
+        </nav>
+        <nav class="bottom-nav">
+            <ul>
+                <li><a href="#"><i class="fas fa-question-circle"></i>Support</a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i>Déconnexion</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <header class="content-header">
+            <h1>CONNEXION</h1>
+        </header>
+        <section class="data-section">
+            <div class="employee-header">
+                <h2></h2>
+            </div>
+            <div class="data-controls">
+                <div class="search-bar">
+                    <input type="text" placeholder="Employé">
+                    <button class="clear-btn"><i class="fas fa-times"></i></button>
+                </div>
+                <button class="add-employee-btn">Ajouter un Employé</button>
+            </div>
+            <br>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Identifiant</th>
+                        <th>Mot de passe</th>
+                        <th>Commentaire</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td id="Nom">ESEASON</td>
+                        <td id="Identifiant">
+                            <div class="identifier-container">
+                                <span id="identifier-row1">sqsipa</span>
+                                <button class="copy-button" onclick="copyToClipboard('identifier-row1', this)">Copier</button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="password-container" id="password-row1">
+                                <span class="password-mask" onclick="togglePassword('password-row1')">............</span>
+                                <span class="password-text" onclick="togglePassword('password-row1')">Enzo77200!</span>
+                                <button class="copy-button" style="margin-left: 10px;" onclick="copyToClipboard('password-row1', this)">Copier</button>
+                            </div>
+                        </td>
+                        <td id="Commentaire">Mot de passe ftp : 55geozvw</td>
+                    </tr>
+                    <tr>
+                        <td id="Nom">WEBCAMP Admin</td>
+                        <td id="Identifiant">
+                            <div class="identifier-container">
+                                <span id="identifier-row2">admin</span>
+                                <button class="copy-button" onclick="copyToClipboard('identifier-row2', this)">Copier</button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="password-container" id="password-row2">
+                                <span class="password-mask" onclick="togglePassword('password-row2')">............</span>
+                                <span class="password-text" onclick="togglePassword('password-row2')">o2kSFEKJIcy3ljIaVwV8</span>
+                                <button class="copy-button" style="margin-left: 10px;" onclick="copyToClipboard('password-row2', this)">Copier</button>
+                            </div>
+                        </td>
+                        <td id="Commentaire">https://webcampadmin.eseason.com/WebCampAdmin/</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+
+</html>
