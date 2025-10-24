@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONNEXION</title>
+    <link rel="icon" href=" logo/webcamp.png" sizes="192x192">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style_connexion.css">
+
+    <script>
+        function togglePassword(elementId) {
+            const passwordContainer = document.getElementById(elementId);
+            const passwordMask = passwordContainer.querySelector('.password-mask');
+            const passwordText = passwordContainer.querySelector('.password-text');
+            const copyButton = passwordContainer.querySelector('.copy-button');
+
+            if (passwordMask.style.display !== 'none') {
+                passwordMask.style.display = 'none';
+                passwordText.style.display = 'inline-block';
+                copyButton.style.display = 'none';
+            } else {
+                passwordMask.style.display = 'inline-block';
+                passwordText.style.display = 'none';
+                copyButton.style.display = 'inline';
+            }
+        }
+
+        function copyToClipboard(elementId, element) {
+            let text;
+            if (elementId.startsWith('password-row')) {
+                const passwordContainer = document.getElementById(elementId);
+                text = passwordContainer.querySelector('.password-text').textContent;
+            } else {
+                text = document.getElementById(elementId).textContent.trim();
+            }
+
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    element.textContent = "Copié!";
+                    setTimeout(() => {
+                        element.textContent = "Copier";
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Erreur lors de la copie: ', err);
+                    alert('Erreur lors de la copie dans le presse-papier.');
+                });
+        }
+
+        // Hide passwords and buttons on page load
+        window.onload = () => {
+            document.querySelectorAll('.password-container').forEach(container => {
+                const passwordMask = container.querySelector('.password-mask');
+                const passwordText = container.querySelector('.password-text');
+                const copyButton = container.querySelector('.copy-button');
+
+                passwordMask.style.display = 'inline-block';
+                passwordText.style.display = 'none';
+                copyButton.style.display = 'inline';
+            });
+        };
+    </script>
+</head>
+
+<body>
+<div class="container">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="user-info">
+                <img src="https://www.eseason.com/wp-content/uploads/2023/10/logo-eseason-1.png" alt="eSeason Logo" class="logo" id="element_cote_logo"  href="Back_Office_Web.html">
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="Back_Office_Web.html"><i class="fas fa-home"></i>Back Office Web</a></li>
+                <li><a href="Site_Global.html" target="_blank"><i class="fas fa-box"></i>Outils Support</a></li>
+                <li><a href="Connexion.html"><i class="fas fa-table"></i>Connexion</a></li>
+                <li><a href="Webservices.html"><i class="fas fa-chart-bar"></i>Webservices</a></li>
+                <!--li><a href="#"><i class="fas fa-calendar-alt"></i>Calendrier <span class="badge">15</span></a></li>
+                <li><a href="#"><i class="fas fa-comment-dots"></i>Messagerie</a></li>
+                <li><a href="#"><i class="fab fa-bitcoin"></i>Crypto</a></li-->
+            </ul>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <header class="content-header">
+            <h1>CONNEXION</h1>
+        </header>
+        <section class="data-section">
+            <div class="employee-header">
+                <h2></h2>
+            </div>
+            <br>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Identifiant</th>
+                        <th>Mot de passe</th>
+                        <th>Commentaire</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td id="Nom">ESEASON</td>
+                        <td id="Identifiant">
+                            <div class="identifier-container">
+                                <span id="identifier-row1">sqsipa</span>
+                                <button class="copy-button" onclick="copyToClipboard('identifier-row1', this)">Copier</button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="password-container" id="password-row1">
+                                <span class="password-mask" onclick="togglePassword('password-row1')">............</span>
+                                <span class="password-text" onclick="togglePassword('password-row1')">Enzo77200!</span>
+                                <button class="copy-button" style="margin-left: 10px;" onclick="copyToClipboard('password-row1', this)">Copier</button>
+                            </div>
+                        </td>
+                        <td id="Commentaire">Mot de passe ftp : 55geozvw</td>
+                    </tr>
+                    <tr>
+                        <td id="Nom">WEBCAMP Admin</td>
+                        <td id="Identifiant">
+                            <div class="identifier-container">
+                                <span id="identifier-row2">admin</span>
+                                <button class="copy-button" onclick="copyToClipboard('identifier-row2', this)">Copier</button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="password-container" id="password-row2">
+                                <span class="password-mask" onclick="togglePassword('password-row2')">............</span>
+                                <span class="password-text" onclick="togglePassword('password-row2')">o2kSFEKJIcy3ljIaVwV8</span>
+                                <button class="copy-button" style="margin-left: 10px;" onclick="copyToClipboard('password-row2', this)">Copier</button>
+                            </div>
+                        </td>
+                        <td id="Commentaire">https://webcampadmin.eseason.com/WebCampAdmin/</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+
+</html>

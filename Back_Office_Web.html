@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href=" logo/webcamp.png" sizes="192x192">
+    <title>Back Office - Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style_back_office_web.css">
+</head>
+<body>
+<div class="container">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="user-info">
+                <img src="https://www.eseason.com/wp-content/uploads/2023/10/logo-eseason-1.png" alt="eSeason Logo" class="logo" id="element_cote_logo" href="Back_Office_Web.html">
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="Back_Office_Web.html"><i class="fas fa-home"></i>Back Office Web</a></li>
+                <li><a href="Site_Global.html" target="_blank"><i class="fas fa-box"></i>Outils Support</a></li>
+                <li><a href="Connexion.html"><i class="fas fa-table"></i>Connexion</a></li>
+                <li><a href="Webservices.html"><i class="fas fa-chart-bar"></i>Webservices</a></li>
+                <!--li><a href="#"><i class="fas fa-calendar-alt"></i>Calendrier <span class="badge">15</span></a></li>
+                <li><a href="#"><i class="fas fa-comment-dots"></i>Messagerie</a></li>
+                <li><a href="#"><i class="fab fa-bitcoin"></i>Crypto</a></li-->
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="content">
+        <div class="header">
+            <!-- Barre de recherche mise à jour -->
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Rechercher..." id="searchInput" onkeyup="searchFunction()">
+            </div>
+
+
+            <div class="title">
+                <h1>BACK OFFICE - WEB</h1>
+            </div>
+
+            <div class="toolbar">
+                <a href="https://www.google.com/" target="_blank">GOOGLE</a>
+                <a href="Connexion.html" target="_blank">CONNEXION</a>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <div class="top-cards">
+            <a href="#support">
+                <div class="top-card support">
+                    <h3>SUPPORT</h3>
+                    <img src="logo/webcamp.png" alt="Icon" class="icon-bouton">
+                </div>
+            </a>
+            <a href="#webcamp">
+                <div class="top-card support">
+                    <h3>WEBCAMP</h3>
+                    <img src=" logo/favicon_esr.png" alt="Icon" class="icon-bouton">
+                </div>
+            </a>
+            <a href="#bank">
+                <div class="top-card support">
+                    <h3>BANK</h3>
+                    <img src="logo/payzen.png" alt="Icon" class="icon-bouton" style="border-radius: 10px 10px;">
+                </div>
+            </a>
+            <a href="#edm">
+                <div class="top-card support">
+                    <h3>EDM</h3>
+                    <img src="logo/edm.png" alt="Icon" class="icon-bouton">
+                </div>
+            </a>
+            <a href="#infonet">
+                <div class="top-card support">
+                    <h3>INFONET</h3>
+                    <img src=" logo/webcamp.png" alt="Icon" class="icon-bouton">
+                </div>
+            </a>
+            <a href="#document">
+                <div class="top-card support">
+                    <h3>DOCUMENT</h3>
+                    <img src="logo/document.png" alt="Icon" class="icon-bouton" style="border-radius: 10px 10px;">
+                </div>
+            </a>
+            <a href="#ticket">
+                <div class="top-card support">
+                    <h3>TICKET</h3>
+                    <img src="logo/ticket.png" alt="Icon" class="icon-bouton" style="width: 97px;border-radius: 10px 10px;margin: 1px 1px 1px -20px;">
+                </div>
+            </a>
+            <a href="#tracking">
+                <div class="top-card support">
+                    <h3>TRACKING</h3>
+                    <img src="logo/tracking.png" alt="Icon" class="icon-bouton" style="width: 86px;border-radius: 10px 10px;margin: 1px 1px 1px -20px;">
+                </div>
+            </a>
+            <a href="#ia">
+                <div class="top-card support">
+                    <h3>IA</h3>
+                    <img src=" logo/webcamp.png" alt="Icon" class="icon-bouton" style="border-radius: 10px 10px;">
+                </div>
+            </a>
+            <a href="#septeo">
+                <div class="top-card support">
+                    <h3>SEPTEO</h3>
+                    <img src="logo/septeo.png" alt="Icon" class="icon-bouton" style="border-radius: 10px 10px;">
+                </div>
+            </a>
+            <a href="#outils">
+                <div class="top-card support">
+                    <h3>OUTILS</h3>
+                    <img src="logo/git.png" alt="Icon" class="icon-bouton" style="border-radius: 10px 10px;">
+                </div>
+            </a>
+            <a href="#divers">
+                <div class="top-card support">
+                    <h3>DIVERS</h3>
+                    <img src="logo/divers.png" alt="Icon" class="icon-bouton" style="border-radius: 10px 10px;">
+                </div>
+            </a>
+        </div>
+
+        <br><br>
+
+        <div id="affiche_result" style="background-color: #191818;">
+
+        </div>
+
+        <br><br>
+
+        <h2 id="webcamp"><img src=" logo/webcamp.png" alt="Icon" class="icon-bouton" Style="width: 50px; vertical-align: middle;">
+            SUPPORT
+        </h2>
+
+        <div class="services" id="support">
+            <div class="service-card">
+                <a class="card-title" href="https://elk.aws.webcamp.fr/app/login" target="_blank">
+                    <h3>ELK</h3></a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://webmail.secur-email.net/?loginOp=relogin&username=maintenance@thelis.fr" target="_blank">
+                    <h3>Boite Maintenance</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://frt.eat.aws.webcamp.fr/#/home" target="_blank">
+                    <h3>EAT - PROD</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://frt.preprod.eat.aws.webcamp.fr/#/" target="_blank">
+                    <h3>EAT - PREPROD</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://jenkins.aws.webcamp.fr/jenkins/login" target="_blank">
+                    <h3>JENKINS</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://dashboard.rg-supervision.com/login" target="_blank">
+                    <h3>ASSIST</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://septeogroup-my.sharepoint.com/:x:/r/personal/francoismanuel_patry_septeo_com/_layouts/15/Doc.aspx?sourcedoc=%7Bca1bfdd2-0fb7-472d-8852-fa77c9e7c610%7D&action=edit&wdinitialsession=42f0278a-fae2-87e1-f575-ee8ee4c3a221&wdrldsc=17&wdrldc=1&wdrldr=ContinueInExcel" target="_blank">
+                    <h3>Backlog N3</h3>
+                </a>
+            </div>
+        </div><br><br><br>
+
+        <h2 id="webcamp">
+            <img src=" logo/favicon_esr.png" alt="Icon" class="icon-bouton" Style="width: 50px; vertical-align: middle;">
+            WEBCAMP
+        </h2>
+
+        <div class="services" id="webcamp">
+            <div class="service-card">
+                <a class="card-title" href="https://webcampadmin.eseason.com/WebCampAdmin/?user=admin&pass=o2kSFEKJIcy3ljIaVwV8" target="_blank">
+                    <h3>Webcamp - PROD</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://preprod.aws.webcamp.fr/WebCampAdmin/?user=admin&pass=xzIWvYjvzcznYu3WxWEy" target="_blank">
+                    <h3>Webcamp - PREPROD</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://thelisresa.webcamp.fr/?camping=" target="_blank">
+                    <h3>ESR - PROD</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://preprod.aws.thelisresa.webcamp.fr/?camping=" target="_blank">
+                    <h3>ESR - PREPROD</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://thelisresa.webcamp.fr/?display_work_labels=1&camping=CODE_CAMPING" target="_blank">
+                    <h3>ESR Variables - PROD</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://thelisresa.preprod.aws.webcamp.fr/?display_work_labels=1&camping=CODE_CAMPING" target="_blank">
+                    <h3>ESR Variables - PREPROD</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://thelisresa.webcamp.fr/import.php?Idclicamp=IDCLICAMP&force=1&only-site=&only-lang=fr&only-operator=" target="_blank">
+                    <h3>ESR - Reset Context</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://thelisresa.webcamp.fr/tools/login.php" target="_blank">
+                    <h3>Campsite Manage</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="droits_doc_dev.html" target="_blank">
+                    <h3>Droits - ESR</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://webcampadmin.eseason.com/efs/exportXML2/" target="_blank">
+                    <h3>FLUX - Opérateur</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://webcampadmin.eseason.com/efs/exportXML/" target="_blank">
+                    <h3>FLUX - CTV</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="droits_doc_dev.html" target="_blank">
+                    <h3>Droits - ESR</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://webcampadmin.eseason.com/efs/base1/IDENTRUNICAMP/" target="_blank">
+                    <h3>MEDIA - CGV Envoyé</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://status.eseason.com/status" target="_blank">
+                    <h3>Etats des Services</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://thelisresa.webcamp.fr/api_tripadvisor/hotel_inventory?lang=fr&api_version=4" target="_blank">
+                    <h3>TRIPADVISOR - Inventaire</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://thelisresa.webcamp.fr/import.php?Version=7&only-site=&only-lang=&Idclicamp=&force=1" target="_blank">
+                    <h3>TRIPADVISOR - Reset Context</h3>
+                </a>
+            </div>
+        </div><br><br><br>
+
+        <h2 id="bank"><img src="logo/payzen.png" alt="Icon" class="icon-bouton" Style="width: 50px; vertical-align: middle;border-radius: 10px 10px;">
+            BANQUE
+        </h2>
+
+        <div class="services" id="bank">
+            <div class="service-card">
+                <a class="card-title" href="https://secure.payzen.eu/vads-merchant/" target="_blank">
+                    <h3>BO Payzen</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://account.lyra.com/auth/realms/collect/protocol/openid-connect/auth?client_id=public-secure&redirect_uri=https%3A%2F%2Fsecure.lyra.com%2Fportal%2F&state=5a852b78-895e-4937-80ea-d46baf827444&nonce=ac28eac5-01d3-4be6-bc07-e3bd781fcffa&response_mode=fragment&response_type=code&scope=openid" target="_blank">
+                    <h3>BO Lyra Collect</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://sogecommerce.societegenerale.eu/vads-merchant/" target="_blank">
+                    <h3>BO Sogecommerce</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://admin.payline.com/auth/realms/prod-retail/protocol/openid-connect/auth?client_id=retail-console&redirect_uri=https%3A%2F%2Fadmin.payline.com%2Fv5%2Fback-office%2Fconfiguration%2Fcontracts%2Fsearch&state=ecd30534-3120-4564-9433-b018acadcb3e&response_mode=fragment&response_type=code&scope=openid&nonce=d1a81cf8-f761-4a69-8b87-b2cab4599f82&code_challenge=GKTsvgxJlMnuYuaR8Uo1SBStcvD3fBvu9G4iq05i9x0&code_challenge_method=S256" target="_blank">
+                    <h3>BO Payline</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://paiement.systempay.fr/vads-merchant/" target="_blank">
+                    <h3>BO Systempay</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://septeogroup.sharepoint.com/:x:/r/sites/SequoiaSoft_sequoiasoft-mauguio/_layouts/15/doc2.aspx?sourcedoc=%7B4a3091a1-cbe8-42b8-bde1-485bdf4d2c3b%7D&action=edit&activeCell=%27LyraCollect%27!D4&wdinitialsession=4dc2ad16-c17a-b61a-2f24-64457b5d6fb1&wdrldsc=2&wdrldc=1&wdrldr=AccessTokenExpiredWarningUnauthenticated%2CRefreshin" target="_blank">
+                    <h3>Comptes IB</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://thelisresa.webcamp.fr/tools/infosTransaction.php?transactionNumber=" target="_blank">
+                    <h3>Info Transaction</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://thelisresa.webcamp.fr/banks/bankWS.php?camping=XXXX&transactionNumber=XXXX&idOrderWBC=XXXXXX&fct=getInfo" target="_blank">
+                    <h3>GetInfo</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://thelisresa.webcamp.fr/checkPayment.php?transactionID=" target="_blank">
+                    <h3>CheckPayment</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://thelisresa.webcamp.fr/reloadOrders.php?idPay=" target="_blank">
+                    <h3>ReloadOrders</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://payzen.status.lyra.com/?utm_campaign=%5BPayzen%20Status%20%2F%20Suivi%20maintenance%20%26%20incident%5D%20-%20Maintenance%20reminder&utm_medium=email&utm_source=mlj" target="_blank">
+                    <h3>Incident Payzen</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://payzen.io/fr-FR/decline-codes/cb/code-03.html" target="_blank">
+                    <h3>Code Erreur Payzen</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://docs.lyra.com/fr/collect/form-payment/error-code/error-10103.html" target="_blank">
+                    <h3>Code Erreur Lyra</h3>
+                </a>
+            </div>
+        </div><br><br><br>
+
+        <h2 id="edm"><img src="logo/edm.png" alt="Icon" class="icon-bouton" Style="width: 50px; vertical-align: middle;">
+            EDM
+        </h2>
+
+        <div class="services" id="edm">
+            <div class="service-card">
+                <a class="card-title" href="https://edmadmin.eseason.com/" target="_blank">
+                    <h3>EDM - PROD</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://preprod.edm.eseason.com/bo-front/login" target="_blank">
+                    <h3>EDM - PREPROD</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://mess.edm.eseason.fr:2884/admin/login/?next=/admin/config/token/%3Fp%3D5" target="_blank">
+                    <h3>RABBITMQ - Admin</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://rabbitmq.edm-prod.aws.webcamp.fr:8443/#/connections" target="_blank">
+                    <h3>RABBITMQ - Manager</h3>
+                </a>
+            </div>
+        </div><br><br><br>
+
+        <h2 id="infonet"><img src=" logo/webcamp.png" alt="Icon" class="icon-bouton" Style="width: 50px; vertical-align: middle;">
+            INFONET
+        </h2>
+
+        <div class="services" id="infonet">
+            <div class="service-card">
+                <a class="card-title" href="https://mail01.thelis.fr:7071/zimbraAdmin/" target="_blank">
+                    <h3>ZIMBRA INFONET</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://infonet.thelis.fr/create.php" target="_blank">
+                    <h3>Create INFONET</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://www.motdepasse.xyz/" target="_blank">
+                    <h3>Générateur Mot de passe</h3>
+                </a>
+            </div>
+        </div><br><br><br>
+
+        <h2 id="document"><img src="logo/document.png" alt="Icon" class="icon-bouton" Style="width: 50px; vertical-align: middle;">
+            DOCUMENT
+        </h2>
+
+        <div class="services" id="document">
+            <div class="service-card">
+                <a class="card-title" href="https://doc.camping.sequoiasoft.com/" target="_blank">
+                    <h3>XWIKI</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://thelisresa.webcamp.fr/doc/v3/index.php?page=ilib" target="_blank">
+                    <h3>WIDGET - ESR</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://demo.edm.eseason.fr/doc/?tenant=" target="_blank">
+                    <h3>WIDGET - MONCOMPTE</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://notebooklm.google.com/notebook/625496c0-8305-4e17-95ec-6405d3d6f9a9?_gl=1*1vsode5*_ga*MTc1MDc1MDkwNC4xNzM3MjI5NjE1*_ga_W0LDH41ZCB*MTczNzIyOTYxNC4xLjEuMTczNzIyOTYyNi4wLjAuMA..&original_referer=https:%2F%2Fnotebooklm.google%23&pli=1" target="_blank">
+                    <h3>DOC - PDF</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="http://heldpdesk.local/" target="_blank">
+                    <h3>HELPDESK - LOCAL</h3>
+                </a>
+            </div>
+        </div><br><br><br>
+
+        <h2 id="ticket"><img src="logo/ticket.png" alt="Icon" class="icon-bouton" Style="width: 90px; vertical-align: middle;margin: 1px 1px 1px -20px;">
+            TICKET
+        </h2>
+
+        <div class="services" id="ticket">
+            <div class="service-card">
+                <a class="card-title" href="https://septeohpa.atlassian.net/" target="_blank">
+                    <h3>JIRA</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://sqs.help/login" target="_blank">
+                    <h3>SQS HELP</h3>
+                </a>
+            </div>
+        </div><br><br><br>
+
+        <h2 id="tracking"><img src="logo/tracking.png" alt="Icon" class="icon-bouton" Style="width: 60px; vertical-align: middle;">
+            TRACKING
+        </h2>
+
+        <div class="services" id="tracking">
+            <div class="service-card">
+                <a class="card-title" href="https://thelisresa.webcamp.fr/infosCamping/tracking/index_new.php?camping=" target="_blank">
+                    <h3>INFO TRACKING</h3>
+                </a>
+            </div>
+        </div><br><br><br>
+
+        <h2 id="ia"><img src=" logo/webcamp.png" alt="Icon" class="icon-bouton" Style="width: 50px; vertical-align: middle;">
+            IA
+        </h2>
+
+        <div class="services" id="ia">
+            <div class="service-card">
+                <a class="card-title" href="https://aistudio.google.com/prompts/new_chat" target="_blank">
+                    <h3>GOOGLE AI STUDIO</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://m365.cloud.microsoft/chat?auth=2" target="_blank">
+                    <h3>COPILOT</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://chat.deepseek.com/" target="_blank">
+                    <h3>DEEPSEEK</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://claude.ai/chat/02a29af9-5254-48d2-889e-a74ec47603b2" target="_blank">
+                    <h3>CLAUDE</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://www.perplexity.ai/?login-source=oneTapHome" target="_blank">
+                    <h3>PERPLEXITY</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://app.1min.ai/image-generator" target="_blank">
+                    <h3>Image-Generator</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://codeium.com/profile" target="_blank">
+                    <h3>CODEIUM</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://app.codegpt.co/en" target="_blank">
+                    <h3>CODEGPT</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://www.cursor.com/loginDeepPage" target="_blank">
+                    <h3>CURSOR</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://huggingface.co/spaces" target="_blank">
+                    <h3>Hugging Face</h3>
+                </a>
+            </div>
+        </div><br><br><br>
+
+        <h2 id="septeo"><img src="logo/septeo.png" alt="Icon" class="icon-bouton" Style="width: 50px; vertical-align: middle;">
+            SEPTEO
+        </h2>
+
+        <div class="services" id="septeo">
+            <div class="service-card">
+                <a class="card-title" href="https://teams.microsoft.com/v2/" target="_blank">
+                    <h3>TEAMS</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://outlook.office.com/mail/" target="_blank">
+                    <h3>Mail - OUTLOOK</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://my.silae.fr/sign-in?redirect=/leaves-and-mobilities/leave-days" target="_blank">
+                    <h3>My Silae</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://talents.elsatis.fr/prod14/portal/portal.jsp?c=207904254&p=201886564&g=201810123&id=419445101" target="_blank">
+                    <h3>Mon Espace - FOEDERIS</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://assure.generation.fr/" target="_blank">
+                    <h3>Mutuelle Génération</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://login.microsoftonline.com/" target="_blank">
+                    <h3>Microsoft OFFICE 365</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://septeogroup.sharepoint.com/:x:/s/sp-mauguio-serviceclient/EWDFu0FgWYtKpxb-j0i6rNcBwWG9WqBfaUtahHlRGkoHcQ?e=IxZ6Uw&CID=3752c40f-64f7-2ec4-b3b8-647503232d49" target="_blank">
+                    <h3>Congés Service Clients</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://app.leeto.co/login?redirectUrl=/espace-salarie/leeshop/" target="_blank">
+                    <h3>CE - LEETO</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://edocperso.fr/login" target="_blank">
+                    <h3>EDOC - Paie</h3>
+                </a>
+            </div>
+        </div><br><br><br>
+
+        <h2 id="outils"><img src="logo/git.png" alt="Icon" class="icon-bouton" Style="width: 50px; vertical-align: middle;">
+            OUTILS
+        </h2>
+
+        <div class="services" id="outils">
+            <div class="service-card">
+                <a class="card-title" href="https://github.com/ipa-septeo" target="_blank">
+                    <h3>GITHUB</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://web.postman.co/workspace/webcamp~fc9b79b2-2cb3-43f6-bec2-2409e39a3200/overview" target="_blank">
+                    <h3>POSTMAN</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://www.usebruno.com/" target="_blank">
+                    <h3>BRUNO API Client</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://sql.sh/cours/" target="_blank">
+                    <h3>SQL.SH</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://www.w3schools.com/sql/" target="_blank">
+                    <h3>W3SCHOOLS - SQL</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://www.browserstack.com/" target="_blank">
+                    <h3>EMULATEUR</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://anydesk.com/fr" target="_blank">
+                    <h3>AnyDesk</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://www.deepl.com/fr/translator" target="_blank">
+                    <h3>DEEPL - Traducteur</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://database-client.com/#/plan" target="_blank">
+                    <h3>DataBase Client VSC</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://jsonviewer.stack.hu/" target="_blank">
+                    <h3>JSON</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="chrome-extension://eejfoncpjfgmeleakejdcanedmefagga/site/index.html#/request/40/history/17" target="_blank">
+                    <h3>RESTER - Webservices</h3>
+                </a>
+            </div>
+        </div><br><br><br>
+
+        <h2 id="divers"><img src="logo/divers.png" alt="Icon" class="icon-bouton" Style="width: 50px; vertical-align: middle;">
+            DIVERS
+        </h2>
+
+        <div class="services" id="divers">
+            <div class="service-card">
+                <a class="card-title" href="https://demo.edm.eseason.fr/" target="_blank">
+                    <h3>SITE DE DEMO</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://www.youtube.com/" target="_blank">
+                    <h3>YOUTUBE</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://www.google.com/" target="_blank">
+                    <h3>GOOGLE</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://mail.google.com/mail/u/0/#inbox" target="_blank">
+                    <h3>MAIL - GOOGLE</h3>
+                </a>
+            </div>
+            <div class="service-card">
+                <a class="card-title" href="https://www.dell.com/support/home/fr-fr" target="_blank">
+                    <h3>DELL SUPPORT</h3>
+                </a>
+            </div>
+        </div><br><br><br>
+
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
+<script>
+    // Barre de recherche
+    function searchFunction() {
+        var input, filter, resultsDiv, i, txtValue, serviceCard, h3, a;
+
+        input = document.getElementById('searchInput');
+        filter = input.value.toUpperCase();
+        resultsDiv = document.getElementById('affiche_result');
+        resultsDiv.innerHTML = ''; // Efface les résultats précédents.
+
+        var allServices = document.querySelectorAll('.services'); // Sélectionne toutes les sections de services
+        allServices.forEach(section => {
+            section.style.display = 'none'; // Masque toutes les sections au début
+        });
+
+        var resultsFound = false; // Pour suivre si des résultats ont été trouvés
+
+        allServices = document.querySelectorAll('.services'); // Sélectionne de nouveau (pour reset)
+
+        allServices.forEach(function(servicesDiv) {
+            for (i = 0; i < servicesDiv.children.length; i++) {
+                serviceCard = servicesDiv.children[i];
+                h3 = serviceCard.querySelector("h3"); // Sélectionne le titre h3 dans la carte de service
+                a = serviceCard.querySelector("a");
+
+                if (h3) {
+                    txtValue = h3.textContent || h3.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        // Si la requête de recherche est trouvée, cloner la carte de service et l'ajouter à affiche_result
+                        let clonedCard = serviceCard.cloneNode(true);
+                        clonedCard.style.display = ""; // Assurer que la carte clonée est visible
+                        resultsDiv.appendChild(clonedCard);
+                        resultsFound = true;
+                    }
+                }
+            }
+        });
+
+        if (!resultsFound) {
+            resultsDiv.innerHTML = '<p>Aucun résultat trouvé.</p>';
+        }
+    }
+
+    /* JavaScript pour la fonction resetSearch() */
+    function resetSearch() {
+        window.location.reload(); // Recharge la page
+    }
+
+    // JavaScript pour le bouton "Retour en haut" (inchangé)
+    let mybutton = document.getElementById("myBtn");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+</body>
+</html>

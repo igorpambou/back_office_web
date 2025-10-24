@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.eseason.com/wp-content/uploads/2023/10/cropped-favicon-192x192-1.webp"
+          sizes="192x192">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Listes des droits - ESR</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #191818;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.7;
+            transition: background-color 0.3s ease;
+        }
+
+        h1 {
+            color: #df6038;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            text-align: center;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #999;
+            opacity: 0.8;
+        }
+
+        .navigation {
+            background-color: #000000;
+            padding: 10px 20px;
+            border-radius: 0 0 8px 8px; /* Rounded corners only on the bottom */
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: fixed; /* Fixed position */
+            top: 0; /* Stick to the top */
+            left: 0; /* Extend to the left */
+            width: 100%; /* Extend to the width */
+            z-index: 1000; /* Ensure it's on top of other content */
+            margin-bottom: 0;
+        }
+
+        .navigation-links {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .navigation a {
+            display: inline-block;
+            margin: 8px 15px;
+            padding: 10px 20px;
+            background-color: transparent;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            font-weight: 400;
+        }
+
+        .navigation a:hover {
+            background-color: #df6038;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .navigation a:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(67, 134, 255, 0.4);
+        }
+
+        .navigation img {
+            height: 80px;
+            margin-right: 20px;
+            border-radius: 4px;
+            order: -1;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            background-color: #252525;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 100px; /* Added margin-top */
+        }
+
+
+        th,
+        td {
+            border: 1px solid #444;
+            padding: 14px;
+            text-align: left;
+            transition: background-color 0.2s ease;
+        }
+
+        th {
+            background-color: #141414;
+            color: #e77a57;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #353535;
+        }
+
+        tbody tr:hover {
+            background-color: #474747;
+        }
+
+        h2 {
+            position: relative;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #444;
+            padding-bottom: 8px;
+            color: #df6038;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        h2 a {
+            color: #df6038;
+            text-decoration: none;
+        }
+
+        h2:hover,
+        h2:focus {
+            color: #ff4d4d;
+        }
+
+        h2:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            height: 2px;
+            width: 0;
+            background-color: #df6038;
+            transition: width 0.3s ease;
+        }
+
+        h2:hover:before,
+        h2:focus:before {
+            width: 100%;
+        }
+
+        h3 {
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: #a8d5ff;
+            font-weight: 400;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #ddd;
+            opacity: 0.9;
+        }
+
+        .footer {
+            margin-top: 60px;
+            font-size: 0.9em;
+            text-align: center;
+            color: #999;
+            padding: 20px 0;
+            border-top: 1px solid #444;
+            opacity: 0.8;
+        }
+
+        /* CSS pour le bouton "Retour en haut" avec une flèche */
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%; /* Le rendre circulaire */
+            font-size: 20px; /* Taille de l'icône */
+            transition: background-color 0.3s ease;
+        }
+
+        #myBtn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Style de l'icône pour un meilleur centrage */
+        #myBtn i {
+            line-height: 0; /* Ajustement vertical */
+        }
+    </style>
+</head>
+
+<body>
+<div class="navigation">
+    <div class="navigation-links">
+        <a href="#active_features">Activer des fonctionnalités</a>
+        <a href="#disable_features">Désactiver des fonctionnalités</a>
+        <a href="#specific_rights">Droits spécifiques</a>
+        <a href="#multicamp_fidelity">MultiCamp / Fidélité</a>
+        <a href="#webcamp_rights">Droits managé par les interfaces Webcamp</a>
+        <a href="#fonctionnement">Fonctionnement</a>
+    </div>
+    <img src="https://www.eseason.com/wp-content/uploads/2023/10/logo-eseason-1-300x109.png" alt="eSeason Logo">
+    <button onclick="topFunction()" id="myBtn" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+</div>
+
+<header><br><br><br><br>
+    <h1>DROITS DOCS DEV - eSeason Résa</h1>
+    <p>Documentation des droits pour les développeurs</p>
+</header>
+
+
+<section id="active_features"><br><br><br>
+    <h2><a href="#active_features">Activer des fonctionnalités</a></h2>
+    <p>► Activer des fonctionnalités qui ne sont pas activées par défaut</p>
+    <p>► Afficher des informations qui ne sont pas affichées par défaut</p>
+    <table>
+        <thead>
+        <tr>
+            <th>Key</th>
+            <th>Description</th>
+            <th>Valeur ce droit en BDD (dans la classe Specific)</th>
+            <th>Page</th>
+            <th>Version</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>dispoSearch_showStock</td>
+            <td>Affiche le stock hébergement sur la liste de résultats. Est activé automatiquement dans le constructeur de la classe Specific si $_REQUEST['dispoSearch'] = 1 est reçu.</td>
+            <td>1</td>
+            <td>0 + tous les disposearch</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>limitFull showStock</td>
+            <td>Affiche un message "Plus que N places disponibles" sur la liste de séjours</td>
+            <td>1</td>
+            <td>results.tpl</td>
+            <td>V1/V2</td>
+        </tr>
+        <tr>
+            <td>mailBookingConfirmationToCE</td>
+            <td>Envoie un email de confirmation de réservation au CE. Le contenu de l'email est le même que celui envoyé au camping.</td>
+            <td>1</td>
+            <td>Cart.class</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>paypal</td>
+            <td>Active le paiement par Paypal</td>
+            <td>1</td>
+            <td>Toutes</td>
+            <td>V1/V2/(en cours sur V3)</td>
+        </tr>
+        <tr>
+            <td>pitchSelection</td>
+            <td>Présentation des emplacements. Sur la page Informations séjour, l'utilisateur peut choisir son emplacement parmi une liste d'emplacements disponibles.</td>
+            <td>1</td>
+            <td>cart infos</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>placePresentation</td>
+            <td>Choix de l'emplacement sur page Informations séjour.</td>
+            <td>1</td>
+            <td>Cart Infos</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>searchEngine_promoCode</td>
+            <td>Ajoute un input code coupon dans le moteur de recherche. Quand l'utilisateur clique sur "Rechercher", les prix des séjours affichés sur la liste de résultats prennent en compte le code coupon.</td>
+            <td>1</td>
+            <td>moteurs de recherche</td>
+            <td>V1/V2/V3</td>
+        </tr>
+        <tr>
+            <td>showAccessToCart</td>
+            <td>Affiche une box d'accès à un panier sur la page d'accueil et la liste séjour</td>
+            <td>1</td>
+            <td>cart, search-engine, list</td>
+            <td>V1/V2</td>
+        </tr>
+        <tr>
+            <td>showCountryOnMultisites</td>
+            <td>Affiche le pays après la ville dans la page de choix camping multi-sites.tpl</td>
+            <td>1</td>
+            <td>MultiList.class</td>
+            <td>V1/V2</td>
+        </tr>
+        <tr>
+            <td>showPaymentModes</td>
+            <td>Affiche la liste des modes de paiements disponibles sur les pages cart infos et cart details</td>
+            <td>1</td>
+            <td>cart info + cart details</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>show_duplicate</td>
+            <td>Affiche la possibilité de dupliquer un produit dans le panier</td>
+            <td>1</td>
+            <td>cart</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>showPDFOnConfirm</td>
+            <td>Remplace le lien du suivi de résa vers le lien du PDF sur la confirmation de résa</td>
+            <td>1</td>
+            <td>cart-payment-success</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hideEmailMessageOnConfirm</td>
+            <td>Permet de cacher le libellé "Vous allez recevoir un email de confirmation" sur la page de confirmation de réservation.</td>
+            <td>1</td>
+            <td>cart-payment-confirm</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hideStockCE</td>
+            <td>Permet de cacher la phrase qui affiche le nombre de stock sur la list en CE.</td>
+            <td>1</td>
+            <td>list</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hideSummaryLinkOnConfirm</td>
+            <td>Permet de cacher le lien "suivre ma demande" sur la page de confirmation</td>
+            <td>1</td>
+            <td>cart-payment-confirm</td>
+            <td>V3</td>
+        </tr>
+
+        </tbody>
+    </table>
+</section>
+
+<section id="disable_features"><br><br><br>
+    <h2><a href="#disable_features">Désactiver des fonctionnalités</a></h2>
+    <p>► Désactiver des fonctionnalités proposées par défaut</p>
+    <p>► Masquer des informations proposées par défaut</p>
+    <table>
+        <thead>
+        <tr>
+            <th>Key</th>
+            <th>Description</th>
+            <th>Valeur</th>
+            <th>Nombre de campings qui utilisent ce droit en BDD (dans la classe Specific)</th>
+            <th>Page</th>
+            <th>Version</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>disable_consproposal</td>
+            <td>TODO</td>
+            <td>1</td>
+            <td>1</td>
+            <td>webcamp.class</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>disabledFamiliesUnitPrice</td>
+            <td>Désactive l'affichage du prix unitaire des suppléments pour toutes ou certaines familles de suppléments. Si le camping ne possède pas de familles suppléments (CUSTOM_SUPP_FAMILY), les index du tableau des suppléments seront utilisés (0: person, 1: vehicle, 2: equipment, 3: others). La valeur du droit prendra la forme d'une liste d'identifiants séparés par des virgules ou sous la forme d'une étoile pour tout désactiver. IMPORTANT: si un seul, mettre quand-même la virgule après le nombre. Exemple :"0,". Multi-sites: ce droit ne fonctionne qu'au niveau du REFER du groupe. Appliqué sur l'Idclicamp d'un des sites d'un groupe, la désactivation ne fonctionnera pas lors de la consultation du THR groupe. Exemples: * , 0, , 0.1 , 0,2,3</td>
+            <td>270</td>
+            <td>Cart info</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>hide_consultants</td>
+            <td>Masque dans la liste de résultats séjours l'information "X personnes consultent cet hébergement".</td>
+            <td>1</td>
+            <td>0</td>
+            <td>search, list, multi-list</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>hide_free_montant_solde</td>
+            <td>Désactive la possiblité de payer un montant au choix dans le suivi de résa</td>
+            <td>1</td>
+            <td>16</td>
+            <td>Suivi de résa</td>
+            <td>V1/V2</td>
+        </tr>
+        <tr>
+            <td>hide_summary_payment</td>
+            <td>Désactive l'affichage et les boutons d'actions liés aux paiements qu'importe son status</td>
+            <td>1</td>
+            <td>4</td>
+            <td>Suivi de résa</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hide_summary_payment_in_progress</td>
+            <td>Dans le cas d'une resa en cours de trairement, désactive l'affichage et les boutons d'actions liés aux paiements</td>
+            <td>1</td>
+            <td>778</td>
+            <td>Suivi de résa</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hide_mode_payment_pdf</td>
+            <td>Masque les paiements dans le pdf recap</td>
+            <td>1</td>
+            <td>2</td>
+            <td>cart-print</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>hide_promo_code</td>
+            <td>Masque le bloc "Code coupon" sur la page "Informations séjour"</td>
+            <td>1</td>
+            <td>27</td>
+            <td>cart infos</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>hide_quotation_information</td>
+            <td>Masque la mention "Ceci ne constitue pas une réservation ferme. Elle doit d'abord être acceptée par le camping." sur la page "Paiement". Ce droit est attribué par le code au compte "franceloc" en accès CE.</td>
+            <td>1</td>
+            <td>2</td>
+            <td>cart payment</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hide_searchEngineCapacity</td>
+            <td>Masque le sélecteur de capacité dans le bloc de recherche, sur la page d'accueil, les pages list et multilist. v2.2.2.33: activé par défaut sur tous les campings espagnols. Pour réactiver le sélecteur sur un camping espagnol, il faut supprimer ce droit.</td>
+            <td>1</td>
+            <td>33 + ES</td>
+            <td>search engine, list, multi-list</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>hide_searchEngineCapacityOnCampingOnly</td>
+            <td>Si activé, le sélecteur de capacité hébergement sera masqué si le type d'hébergement "emplacement" est coché dans le moteur de recherche.</td>
+            <td>1</td>
+            <td>0</td>
+            <td>search engine tpl</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>hide_supplement_price</td>
+            <td>Masque le le prix des suppélement dans cart-infos</td>
+            <td>1</td>
+            <td>0</td>
+            <td>cart-infos</td>
+            <td>V2</td>
+        </tr>
+        <tr>
+            <td>hide_thr_search_criteria_vertical</td>
+            <td>Masque le sélecteur de critères dans le moteur de recherche vertical</td>
+            <td>1</td>
+            <td>7</td>
+            <td>filters</td>
+            <td>V2</td>
+        </tr>
+        <tr>
+            <td>hideAccomodationTypeSelector</td>
+            <td>Masque le choix du type d'hébergement (location/emplacement)</td>
+            <td>1</td>
+            <td>1</td>
+            <td>search engine</td>
+            <td>V1/V3</td>
+        </tr>
+        <tr>
+            <td>hideCWfield</td>
+            <td>Masque le champ de saisie du cryptogramme visuel, ou CVV (Card Verification Value), sur la page de paiement par CB sans intégration bancaire.</td>
+            <td>1</td>
+            <td>0</td>
+            <td>Formulaire Thelis</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>hideFlexibleDatesSelector</td>
+            <td>Masque le sélecteur "Exactement le/Au plus tôt" dans le moteur de recherche</td>
+            <td>1</td>
+            <td>0</td>
+            <td>search-engine-dates.tpl</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>hideFooterCards</td>
+            <td>Masque l'image des CB dans le footer</td>
+            <td>1</td>
+            <td>0</td>
+            <td>footer.tpl</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>hidePromoDesc</td>
+            <td>Masque le descriptif des promotions (le bouton -50% et le tooltip qui va avec)</td>
+            <td>1</td>
+            <td>1</td>
+            <td>top.tpl/COMPONENT promotion.js</td>
+            <td>V1/V3</td>
+        </tr>
+        <tr>
+            <td>hidePromoTexts</td>
+            <td>Masque seulement les descriptions des promotions sur le tooltip promo. Seul reste le "vous économisez..."</td>
+            <td>1</td>
+            <td>0</td>
+            <td>top.tpl</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>list_noCity</td>
+            <td>Masque le nom de la ville sur la page list</td>
+            <td>1</td>
+            <td>0</td>
+            <td>list/multi-list</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>noSimpleSearch</td>
+            <td>Masque le lien "Choix simplifié de période" dans le moteur de recherche. On peut toujours accéder au SimpleSearch via l'ajout de paramètres dans l'URL (simpleMonth, etc).En V3 la fonctionnalité est reprise mais dans le droit.</td>
+            <td>1</td>
+            <td>0 + CE</td>
+            <td>search engine simpleblock</td>
+            <td>V2</td>
+        </tr>
+        <tr>
+            <td>unitPrice_hideFree</td>
+            <td>Masque les mentions Gratuit dans le prix unitaire des suppléments</td>
+            <td>1</td>
+            <td>0</td>
+            <td>cart-infos-price</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>hide_permonthSearch</td>
+            <td>Masque la recherche par mois du semainier</td>
+            <td>1</td>
+            <td>0 + Orbitur</td>
+            <td>simpleblock categories</td>
+            <td>V2</td>
+        </tr>
+        <tr>
+            <td>hide latestAvailabilities</td>
+            <td>Masque le bouton inspirez-moi</td>
+            <td>1</td>
+            <td>2 + Orbitur</td>
+            <td>V2/V3</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>hide ThrPaymentModes</td>
+            <td>Masque le bloc des modes de paiements</td>
+            <td>1</td>
+            <td>1</td>
+            <td>cart-infos cart-details</td>
+            <td>V1/V2</td>
+        </tr>
+        <tr>
+            <td>hideThrFooterReinsurance</td>
+            <td>Masque le footer reinsurance</td>
+            <td>1</td>
+            <td>1</td>
+            <td>footer</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hide_available_stays</td>
+            <td>Masque nombre de résultat sur la liste</td>
+            <td>1</td>
+            <td>0</td>
+            <td>liste</td>
+            <td>V2</td>
+        </tr>
+        <tr>
+            <td>hideUnitPricePdf</td>
+            <td>Masque la colonne prix unitaire dans le devis du pdf</td>
+            <td>1</td>
+            <td>ES</td>
+            <td>PDF</td>
+            <td>V2/V3</td>
+        </tr>
+        <tr>
+            <td>search_type_5_disabled</td>
+            <td>Désactive les recherches strict+flex (searchtype 5) et retourne à l'ancien fonctionnement (résultats soit stricts, soit flex - searchtype 4)</td>
+            <td>1</td>
+            <td>1</td>
+            <td>list.php + simpleblock</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>disabled_tracking</td>
+            <td>Désactive l'envoie du tracking pour un/des opérateur/s</td>
+            <td>15618;15891</td>
+            <td>0</td>
+            <td>Toutes</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hide_animal</td>
+            <td>Permet de ne pas afficher les pictos animaux autorisés / non autorisés</td>
+            <td>1</td>
+            <td>0</td>
+            <td>Toutes</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>chow one halance radio</td>
+            <td>Affiche coulamant 1 choiv nour la naiamant du colde lacompte cu coldal</td>
+            <td>n</td>
+            <td></td>
+            <td>Suivi de ráca</td>
+            <td>1/2</td>
+        </tr>
+        <tr>
+            <td>hideNbSurface</td>
+            <td>Cache le selecteur de surface sur la list</td>
+            <td>1</td>
+            <td>0</td>
+            <td>list.php</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hideNbBedroom</td>
+            <td>Cache le selecteur de chambre sur la list</td>
+            <td>1</td>
+            <td>0</td>
+            <td>list.php</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hideNbBathroom</td>
+            <td>Cache le selecteur de salle de bain sur la list</td>
+            <td>1</td>
+            <td>0</td>
+            <td>list.php</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>isFirstParticipantNoBuyer</td>
+            <td>Le premier participant n'est pas coché comme payeur</td>
+            <td>1</td>
+            <td>1</td>
+            <td>Cart details</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>forcePitchSelectionEnhancedSelected</td>
+            <td>Sélectionne par defaut le premier emplacement la liste des emplacements disponibles</td>
+            <td>1</td>
+            <td>1</td>
+            <td>Cart info</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hidelsBuyerCheckbox</td>
+            <td>Cache la checkbox du participant payeur</td>
+            <td>1</td>
+            <td></td>
+            <td>Cart details</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hideCivilityMissByLang</td>
+            <td>Cache la civilité mademoiselle</td>
+            <td>0</td>
+            <td>1</td>
+            <td>Cart details</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hide_campsiteSelector</td>
+            <td>Cache la selecteur de campsite pour les multi-sites</td>
+            <td>1</td>
+            <td>0</td>
+            <td>moteur de recherche</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hide_summaryLink</td>
+            <td>Cache le bouton d'acces au suivi de réservation</td>
+            <td>1</td>
+            <td>1</td>
+            <td>header</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>disabled_all_tracking_for_ce</td>
+            <td>N'active pas les tracking pour un tunnel CE</td>
+            <td>1</td>
+            <td>13</td>
+            <td>tracking</td>
+            <td>V3</td>
+        </tr>
+
+        </tbody>
+    </table>
+</section>
+
+
+<section id="specific_rights"><br><br><br>
+    <h2><a href="#specific_rights">Droits spécifiques</a></h2>
+    <p>► Activer un ensemble de fonctionnalités (call centers, CE...)</p>
+    <p>► Modifier le comportement / l'affichage de THR</p>
+    <table>
+        <thead>
+        <tr>
+            <th>Key</th>
+            <th>Description</th>
+            <th>Valeur</th>
+            <th>Nombre de campings qui utilisent ce droit en BDD (dans la classe Specific)</th>
+            <th>Page</th>
+            <th>Version</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Idclicamp</td>
+            <td>Active la classe spécifique du compte correspondant ex: 2516</td>
+            <td>335</td>
+            <td></td>
+            <td>Idclicamp _class</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>accommodations.no_polaroid</td>
+            <td>Sur la liste des hébergements, supprime l'effet "polaroïd" sur les images/photos des catégories.</td>
+            <td>1</td>
+            <td>0</td>
+            <td>accomodations.php</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>addToCartLargeBtn</td>
+            <td>Modifie l'apparence du bouton "Ajouter au panier" sur la liste de résultats séjour (si droit multilist uniquement). Le bouton a une icône panier suivie du libellé "Réserver". Le bouton "Ajouter au panier" par défaut contient seulement l'icône panier, il n'y a pas de texte "Réserver".</td>
+            <td>1</td>
+            <td>0</td>
+            <td>multi-results</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>available_insurance</td>
+            <td>Permet de forcer l'assurance annulation à true</td>
+            <td>1</td>
+            <td>13</td>
+            <td>cart add</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>bank ws</td>
+            <td>Utilise les IB en mode webservice (systempay et saferpay)</td>
+            <td>1</td>
+            <td>610</td>
+            <td>Toutes</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>blockProcessOnStep3</td>
+            <td>Empêche l'utilisateur d'accéder à la page de paiement. Le process de résa s'arrête au step 3: cart-details. On ne peut donc qu'imprimer le devis</td>
+            <td>1</td>
+            <td>0</td>
+            <td>cart details, home, railroad</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>callCenter</td>
+            <td>Active le mode Call Center. Voir les détails en fin de document. > Affiche le comment pour le CC (avec le droit panachage_ce) Pas de canaux de connaissance dans cart details 2 types de recherche dans multilist (camping et location) Affiche le stock dispoSearch_showStock Affiche le stock multi-</td>
+            <td>1</td>
+            <td>7 + TCS, Capfun</td>
+            <td>Toutes</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>cancellationInsuranceDefaultNo</td>
+            <td>Coche par défaut l'option "Je ne veux pas l'assurance annulation"</td>
+            <td>1</td>
+            <td>0</td>
+            <td>cart infos</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>cartEnabled</td>
+            <td>Force l'activation/désactivation du panier. Outrepasse la valeur cartEnabled dans la table thelisresa.REFGESTION. Attention il faut utiliser getRight != null et non pas hasRight.</td>
+            <td>0 (désactivé) ou 1 (activé)</td>
+            <td>0</td>
+            <td>Toutes</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>ceDisplayStock</td>
+            <td>Affiche le stock (doit être utilisé en complément de l'accès CE)</td>
+            <td>1</td>
+            <td>1</td>
+            <td>list</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>cgos</td>
+            <td>Détermine si c'est un compte CGOS. Au 4/5/2015, seul suneliacgos a ce droit (C4891).</td>
+            <td>1</td>
+            <td>0</td>
+            <td>cart-details</td>
+            <td>V1/V2</td>
+        </tr>
+        <tr>
+            <td>CGOS_in_order</td>
+            <td>Ajoute le numéro CGOS dans un champ dédié de cpg_MultiOrder.</td>
+            <td>1</td>
+            <td>2</td>
+            <td></td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>CNAS_in_order</td>
+            <td>Ajoute le numéro CNAS dans un champ dédié de cpg_MultiOrder.</td>
+            <td>1</td>
+            <td>2</td>
+            <td></td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>customContext</td>
+            <td>Charge le contexte depuis les tables CUSTOM_*  ex: 2516</td>
+            <td>3</td>
+            <td>RPW</td>
+            <td></td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>default-header</td>
+            <td>Defini le header par defaut  -1, 1, 2, 3, 4, 5 (-1 si le camping a uploadé le siens, de 1 à 5 pour ceux proposé par thelis)</td>
+            <td>1263</td>
+            <td></td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>default-logo</td>
+            <td>Defini le logo par defaut -1, 1, (-1 si le camping a uploadé le siens, de 1 pour celui proposé par thelis)</td>
+            <td>1263</td>
+            <td></td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>forceReferZoneSup</td>
+            <td>Force le chargement de la ZoneSup du refer courant et non pas celui du compte correspondant à l'Idclicamp défini dans la table thelisresa.SITE. Par exemple pour aquavacaf, certains sites ont l'Idclicamp d'aquavac dans SITE et donc c'est la zone sup de ce compte (aquavac) qui serait chargée.</td>
+            <td>1</td>
+            <td>2</td>
+            <td>RPW</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>getPrice_minimum_persons</td>
+            <td>Permet de retourner le prix avec le nombre minimum de personne dans le logement (et pas le prix du logement seul)</td>
+            <td>1</td>
+            <td>0</td>
+            <td>search</td>
+            <td>V1/V2</td>
+        </tr>
+        <tr>
+            <td>groupCategoriesSatSunday</td>
+            <td>Fusionne les catégories Samedi/Dimanche sur les listes de résultats (list/multi-list/SimpleSearch) Campings qui ont ce droit: Naiades C163 et La Siesta C2060 (en base), Franceloc (classes specific 3576)</td>
+            <td>1</td>
+            <td>112 + Capfun</td>
+            <td>search</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>hasOwnCss</td>
+            <td>TODO</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>hide_duplicate_cart</td>
+            <td>Cache le bouton dupliquer dans le panier lorsque la valeur est mise à "1" dans la table "RIGHTS" pour 2010 et 2015</td>
+            <td>1</td>
+            <td>0</td>
+            <td>cart</td>
+            <td>V1/V2</td>
+        </tr>
+        <tr>
+            <td>hideAdditionalOptions</td>
+            <td>Sur la page "Informations séjour", masque par défaut tous les suppléments et options sauf "personnes", et affiche un bouton "plus d'options" pour afficher les options masquées.</td>
+            <td>1</td>
+            <td>0</td>
+            <td>cart details</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>home_nb_favorites</td>
+            <td>Pour la v2015, modifie le nombre de coups de coeur qui peuvent être affichés dans le widget. En v2010 ils sont limités à 6. En v2015 par défaut ils sont limités à 2. THELISRESA-3505</td>
+            <td>int</td>
+            <td>0</td>
+            <td>Toutes</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>initNbPersons</td>
+            <td>Modifie la valeur par défaut du premier supplément de type personne (sans le droit, cette valeur est de 1)</td>
+            <td>0, 1, 2 ... (int)</td>
+            <td>1</td>
+            <td>cart infos</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>xNoFees_3_systempay</td>
+            <td>Paiement x fois sans frais. Exemple: "3" pour paiement en 3 fois sans frais (int)</td>
+            <td>28</td>
+            <td>paiement + pdf</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>xNoFees_3_lyra</td>
+            <td>Paiement x fois sans frais. Exemple: "3" pour paiement en 3 fois sans frais</td>
+            <td>0</td>
+            <td>paiement + pdf</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>xNoFees_3_floabank</td>
+            <td>Paiement x fois avec floabank. Exemple: "3" pour paiement en 3 fois</td>
+            <td>3</td>
+            <td>paiement + pdf</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>xNoFees_4_floabank</td>
+            <td>Paiement x fois avec floabank. Exemple: "4" pour paiement en 4 fois</td>
+            <td>4</td>
+            <td>paiement + pdf</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>MLC_EMAIL</td>
+            <td>Utilise le template de mail yelloh qui est dans la classe specific</td>
+            <td>1</td>
+            <td>28</td>
+            <td>Mailer</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>noStrikedPrice</td>
+            <td>Remplace le prix barré par "au lieu de"</td>
+            <td>1</td>
+            <td>0</td>
+            <td>multi-results</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>panachage_ce</td>
+            <td>Est activé en fonction du paramétrage du camping Enleve l'acces au suivi de résa</td>
+            <td>1</td>
+            <td>0</td>
+            <td>list</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>pitch_selection_enhanced</td>
+            <td>Affiche le commentaire CC (si le droit callcenter est activé) Affiche la prestation choix emplacement précis sur cart-infos</td>
+            <td>1</td>
+            <td>8</td>
+            <td>cart infos</td>
+            <td>V2-V3</td>
+        </tr>
+        <tr>
+            <td>pitch_selection_enhanced_free</td>
+            <td>Rends la prestation choix emplacement précis gratuite</td>
+            <td>1</td>
+            <td>1</td>
+            <td>cart infos</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>responsiveCSS</td>
+            <td>Permet au camping de gérer lui-même le responsive, et donc de ne pas tenir compte des css dans le dossier "_tablet". Sur tablette, le tablet default sup ne sera pas chargé. Il faut placer les css du camping dans css ET dans_tablet/css</td>
+            <td>1</td>
+            <td>0</td>
+            <td>Toutes</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>search_multilist</td>
+            <td>Active l'affichage multilist pour les résultats de recherche</td>
+            <td>1</td>
+            <td>55 + Sunelia</td>
+            <td>Toutes</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>searchEngine_capacity_default</td>
+            <td>Modifie la valeur par défaut du nombre de personnes dans le moteur de recherche.</td>
+            <td>int</td>
+            <td>2</td>
+            <td>search</td>
+            <td>V2/V3</td>
+        </tr>
+        <tr>
+            <td>show_campsite_map</td>
+            <td>Affiche une iframe avec le plan du camping pour choisir son emplacement. Liens vers le plan</td>
+            <td>3</td>
+            <td>cart infos</td>
+            <td>V2/V3</td>
+        </tr>
+        <tr>
+            <td>show_association</td>
+            <td>Ce droit ajoute un supplément qui permet de faire un don à une association. association</td>
+            <td>1</td>
+            <td>cart info</td>
+            <td>V2/V3</td>
+        </tr>
+        <tr>
+            <td>show_stock_tamaro</td>
+            <td>Affiche le stock restant sur la liste des séjour et le simpleBlock</td>
+            <td>1</td>
+            <td>1</td>
+            <td>list</td>
+            <td>V2</td>
+        </tr>
+        <tr>
+            <td>simpleblock_day_location</td>
+            <td>Defini le jour par defaut sur le simpleblock pour les locatif (défini au niveau du categoryviewer). Sinon la recherche sera basé sur la date du moteur de recherche. En V3, le droit impact aussi la sélection de tarifs locatifs. 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'sunday' || 'lundi','mardi', 'mercredi', 'jeudi','vendredi', 'samedi','dimanche'</td>
+            <td>4</td>
+            <td></td>
+            <td>V2/V3</td>
+        </tr>
+        <tr>
+            <td>siteAvailability</td>
+            <td>Affiche la liste des dispos pour chaque camping lors d'une recherche multi-campings (catégories non affichées). multi-sites.tpl -> Activer la contreproposition sur un camping Lors de l'affichage des dispos sites (contre-proposition Camping), allicie patti les sites et contre-propositions ceux qui sont dispos à dates rapprochées. Par défaut on n'affiche que ceux qui sont dispos à dates exactes.</td>
+            <td>1</td>
+            <td>12 + Sunelia</td>
+            <td>multi-list</td>
+            <td>V1/V2</td>
+        </tr>
+        <tr>
+            <td>siteAvailability_flex</td>
+            <td>Camping), allicie patti les sites et contre-propositions ceux qui sont dispos à dates rapprochées. Par défaut on n'affiche que ceux qui sont dispos à dates exactes.</td>
+            <td>1</td>
+            <td>0</td>
+            <td>multi-list</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>tracking_server_side</td>
+            <td>Active le tracking server side pour la conversion</td>
+            <td>0</td>
+            <td></td>
+            <td>Conversion</td>
+            <td>V1</td>
+        </tr>
+        <tr>
+            <td>hideLanguageSelector</td>
+            <td>Permet de cacher le sélecteur de langue au sein de THR A savoir: le droit hideLanguageSelector invalide le droit showLanguagesSelectorOnList lorsqu'il est activé</td>
+            <td>1</td>
+            <td>0 + Sunelia</td>
+            <td>home + list et multi-list</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>showConnectionFid</td>
+            <td>Permet d'afficher une tooltip sur le bouton de connexion Fid à l'arrivée sur EseasonResa. Le libellé utilisé dans la tooltip est 'fidelityFlash'.</td>
+            <td>1</td>
+            <td>0</td>
+            <td>Header</td>
+            <td>V2/V3</td>
+        </tr>
+        <tr>
+            <td>showLanguagesSelectorOnList</td>
+            <td>Permet l'affichage du sélecteur de langue au sein de la page de recherche</td>
+            <td>1</td>
+            <td>0 + TCS</td>
+            <td>list et multi-list</td>
+            <td>V1/V2</td>
+        </tr>
+        <tr>
+            <td>hideDirect PaymentDisableMessage</td>
+            <td>Permet de cacher le message disant que le paiement du solde est désactivé. Précision: si le camping a le paiement du solde activé alors on doit passer outre ce droit pour afficher le bloc de paiement.</td>
+            <td>1</td>
+            <td>1</td>
+            <td>summary-detail</td>
+            <td>V2</td>
+        </tr>
+        <tr>
+            <td>simpleblockLimitConsProposal</td>
+            <td>Permet de personnaliser la limite de contre-propositions affichées au sein des SimpleBlock. Par défaut, la limite est fixée à 7.</td>
+            <td>2</td>
+            <td>0</td>
+            <td>Widgets Simpleblock</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>override_socket_timeout_cpg_context</td>
+            <td>Permet d'augmenter le temps avant le timeout pour le chargement du context.</td>
+            <td>60</td>
+            <td>1</td>
+            <td>Toutes</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>pixelFBCustom</td>
+            <td>Permet d'appeler des scripts de tracking custom</td>
+            <td>1</td>
+            <td>1</td>
+            <td></td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>GTMCustomTracking</td>
+            <td>Permet d'appeler des scripts de tracking custom</td>
+            <td>[url] | [code ua], [url] | [code ua]</td>
+            <td>2</td>
+            <td>Toutes</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>overrideGroup Tracking</td>
+            <td>Permet de modifier le code UA en fonction de l'url depuis laquelle on arrive sur THR</td>
+            <td>1</td>
+            <td>0 + TCS</td>
+            <td></td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>effinity</td>
+            <td>Active le tracking effinity</td>
+            <td>[id_effinity]</td>
+            <td>8</td>
+            <td>JSTrack</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>hideCampingName</td>
+            <td>Cache le nom du camping dans le header V3</td>
+            <td>1</td>
+            <td>3</td>
+            <td>Header</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hideCategoriesTitle</td>
+            <td>Cache le titre "Locatifs" et "Emplacements" sur la home V3</td>
+            <td>1</td>
+            <td>2</td>
+            <td>Home</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>nbConsProposal</td>
+            <td>Définit un nombre maximal de contre proposition par rapport à site à afficher en recherche multi-sites</td>
+            <td>1,2,5,15...</td>
+            <td>0</td>
+            <td>list</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>rgpdinLink</td>
+            <td>Ne vérifie pas la présence d'un PDF pour afficher la traduction de la politique de confidentialité. Utiliser pour les campings qui mettent un lien vers leur site.</td>
+            <td>1</td>
+            <td>1</td>
+            <td>cart-details</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>hasAdditionalCGV</td>
+            <td>Ajoute un bloc au dessus de la coche des CGV avec des traductions</td>
+            <td>1</td>
+            <td>1</td>
+            <td>cart-payment</td>
+            <td>V3</td>
+        </tr>
+        <tr>
+            <td>addCustomMessageOnStrictResult</td>
+            <td>Ajoute le bloc sous le titre des resultats stricts</td>
+            <td>1</td>
+            <td>1</td>
+            <td>list</td>
+            <td>V3</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="multicamp_fidelity"><br><br><br>
+    <h2><a href="#multicamp_fidelity">MultiCamp / Fidélité</a></h2>
+    <p>► Activer les fonctionnalités MultiCamp (connexion Fid, envoi à WebCamp, sendOrderFromWebCamp)</p>
+    <table>
+        <thead>
+        <tr>
+            <th>Key</th>
+            <th>Description</th>
+            <th>Valeur</th>
+            <th>Nombre de campings qui utilisent ce droit en BDD (dans la classe Specific)</th>
+            <th>Page</th>
+            <th>Version</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>MultiCamp_WSDL</td>
+            <td>Requiert les droits MultiCamp_WSDL et MultiCamp_Login</td>
+            <td>URL du WSDL</td>
+            <td>7</td>
+            <td>Specific.class</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>MultiCamp_Login</td>
+            <td>Requiert les droits MultiCamp_Pass et MultiCamp_Pass</td>
+            <td>Login des Webservices MultiCamp</td>
+            <td>7</td>
+            <td>Specific.class</td>
+            <td>Toutes</td>
+        </tr>
+        <tr>
+            <td>MultiCamp_Pass</td>
+            <td>Requiert les droits MultiCamp_WSDL et MultiCamp_Login</td>
+            <td>Password des Webservices MultiCamp</td>
+            <td>7</td>
+            <td>Specific.class</td>
+            <td>Toutes</td>
+        </tr>
+
+        </tbody>
+    </table>
+</section>
+
+<section id="webcamp_rights"><br><br><br>
+    <h2><a href="#webcamp_rights">Droits managé par les interfaces Webcamp</a></h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Key</th>
+            <th>Description</th>
+            <th>Valeur</th>
+            <th>Nombre de campings qui utilisent ce droit en BDD (dans la classe Specific)</th>
+            <th>Page</th>
+            <th>Version</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>free_value_payment</td>
+            <td>ATTENTION! Gestion du droit dans base1.SITEREF_PARAM, utile en suivi résa pour display le champ montant libre</td>
+            <td>0 le montant libre n'est pas autorisé, 1 il est autorisé en accompte/solde, 2 solde uniquement</td>
+            <td></td>
+            <td>Tous</td>
+            <td>Toutes V3</td>
+        </tr>
+        <tr>
+            <td>pitch_selection_enhanced</td>
+            <td>Gestion par webcamp de l'affichage du choix emplacement très précis (sélecteur emplacement + descriptions image en overlay)</td>
+            <td>1 pour activé. inexistant ou 0 autrement</td>
+            <td>8</td>
+            <td>cart-infos</td>
+            <td>V3</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="fonctionnement"><br><br><br>
+    <h2><a href="#fonctionnement">Fonctionnement</a></h2>
+    <h3>Utilisation</h3>
+    <ul>
+        <li>En PHP : <code>$Specific->getRight('nom_du_droit')</code></li>
+        <li>En js (version 2015) <code>$scope.specific_rights.nom_du_droit</code></li>
+        <li>Dans un template SMARTY : <code>'nom_du_droit hasRight</code></li>
+    </ul>
+
+    <h3>Les droits et les versions</h3>
+    <p>S'il est nécessaire d'activer un droit pour toutes les versions de THR il faut que le droit soit déclaré dans le PHP. Au contraire si ce dernier doit être utilisé uniquement sur une seule version alors il est préférable de le déclarer dans le js.</p>
+
+    <h3>Base de données</h3>
+    <p>voici la procédure a suivre :</p>
+    <p>Pour ajouter un droit à un camping il faut ajouter une requête dans le fichier sql/scripts/"version"/update.sql.
+        <code>REPLACE INTO `thelisresa`.`RIGHTS` (`Idclicamp`, `key`, `right`) VALUES ('xxx', 'nom_de_la_variable', 'X');</code>
+    </p>
+
+</section>
+
+<script>
+    // JavaScript pour le bouton "Retour en haut" (inchangé)
+    let mybutton = document.getElementById("myBtn");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+</body>
+
+</html>
